@@ -1,0 +1,136 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 142.1 76.2% 36.3%;
+    --primary-foreground: 355.7 100% 97.3%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 142.1 76.2% 36.3%;
+    --radius: 0.5rem;
+    --error-card: #f1f0f0;
+    --ja-button-text: rgb(76 162 76);
+    --ja-button-hover: rgb(118, 224, 118);
+    --terms-and-condition: #dfe0e1;
+    --todos-summary-card-foreground: #f5f5f5;
+    --transcription_text: #161712;
+    --M-todos-summary-card: #ffffff;
+    --project-background-start: #ffffff;
+    --project-background-middle: #f0f0f0;
+    --project-background-end: #ffffff;
+    --green-box-gradient-start: #f9f9f9;
+    --green-box-gradient-middle: #cccccc;
+    --green-box-gradient-end: #f9f9f9;
+    --white-box-gradient-start: #e0e0e0;
+    --white-box-gradient-middle: #ffffff;
+    --white-box-gradient-end: #e0e0e0;
+    --yellow-box-gradient-start: #fff8e1;
+    --yellow-box-gradient-middle: #ffe082;
+    --yellow-box-gradient-end: #fff8e1;
+    --blue-box-gradient-start: #e3f2fd;
+    --blue-box-gradient-middle: #90caf9;
+    --blue-box-gradient-end: #e3f2fd;
+    --title-color: #333333;
+    --description-color: #555555;
+    --todo-summary-card: #ffffff;
+    --feedback-card: #ffffff;
+    --edit_profile_card: #F0F8FF; 
+    --edit_profile_header: #b4f6c9;
+    --edit_profile_trigger_hover: #cfdada;
+    --skelton-loader:#8a8a8a;
+  }
+
+  .dark {
+    --background: 20 14.3% 4.1%;
+    --foreground: 0 0% 95%;
+    --card: 24 9.8% 10%;
+    --card-foreground: 0 0% 95%;
+    --popover: 0 0% 9%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 142.1 70.6% 45.3%;
+    --primary-foreground: 144.9 80.4% 10%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 12 6.5% 15.1%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 85.7% 97.3%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 142.4 71.8% 29.2%;
+    --error-card: #dddddd;
+    --ja-button-text: rgb(137, 210, 137);
+    --ja-button-hover: rgb(124, 235, 124);
+    --terms-and-condition: #333541;
+    --todos-summary-card-foreground: #161712;
+    --transcription_text: #e0e2e4;
+    --M-todos-summary-card: #161712;
+    --project-background-start: #080509;
+    --project-background-middle: #1a171c;
+    --project-background-end: #080509;
+    --green-box-gradient-start: #0d1212;
+    --green-box-gradient-middle: #3da077;
+    --green-box-gradient-end: #0d1212;
+    --white-box-gradient-start: #121013;
+    --white-box-gradient-middle: #b0afb0;
+    --white-box-gradient-end: #121013;
+    --yellow-box-gradient-start: #110e0e;
+    --yellow-box-gradient-middle: #afa220;
+    --yellow-box-gradient-end: #110e0e;
+    --blue-box-gradient-start: #0c0a0e;
+    --blue-box-gradient-middle: #5f6fad;
+    --blue-box-gradient-end: #0c0a0e;
+    --title-color: white;
+    --description-color: hsla(0, 0%, 100%, 0.5);
+    --todo-summary-card: #161712;
+    --feedback-card: #000000;
+    --edit_profile_card: #000000; 
+    --edit_profile_header:#202020;
+    --edit_profile_trigger_hover: #202020;
+    --skelton-loader:#19191A;
+   
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}

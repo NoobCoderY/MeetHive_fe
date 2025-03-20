@@ -1,0 +1,54 @@
+.btn-container-outline {
+  background: rgb(var(--primary)) !important;
+  box-shadow: inset 3px 3px 23px 1px rgb(var(--primary));
+}
+
+.btn-container-secondary {
+  background: rgb(var(--primary)) !important;
+  box-shadow: inset 3px 3px 23px 1px rgb(var(--primary));
+}
+
+.btn-container-destructive .ja-button {
+  box-shadow: none;
+}
+
+.btn-container {
+  background: transparent;
+  width:fit-content;
+  height:fit-content;
+  clip-path: polygon(
+    2px 20px, 
+    25px 1px, 
+    99% 1px,
+    99% calc(100% - 20px), 
+    calc(100% - 25px) 98%, 
+    2px 96%, 
+    1px 36px
+  )
+}
+
+.ja-button {
+  box-shadow: inset 3px 3px 23px 1px #008000;
+  border:none;
+  padding: 1rem 3rem;
+  overflow:hidden;
+  clip-path: polygon(
+    4px 20px,
+    25px 3px,
+    98% 2px,
+    98% calc(100% - 21px),
+    calc(100% - 26px) 95%,
+    4px 93%,
+    3px 36px
+  );
+}
+
+.ja-button{
+  color: var(--ja-button-text);
+}
+
+.btn-container .ja-button:hover{
+  box-shadow: none;
+  background: var(--ja-button-hover);
+  color: #000;
+}

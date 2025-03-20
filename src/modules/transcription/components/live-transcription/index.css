@@ -1,0 +1,69 @@
+.transcription_outer_card{
+   clip-path: polygon(88% 10%, 91% 0, 100% 0, 100% 86%, 91% 100%, 0 100%, 0 9%);
+    background: gray;
+    height: fit-content;
+}
+
+.transcription_inner_card{
+    clip-path: polygon(calc(88% - -1px) calc(10% - -1px), calc(91% - -1px) calc(0% + 1px), calc(100% - 1px) calc(0% + 1px), calc(100% - 1px) calc(86% - 1px), calc(91% - 1px) calc(100% - 1px), calc(0% + 1px) calc(100% - 1px), calc(0% + 1px) calc(9% - -1px));
+     background-color: var(--todos-summary-card-foreground) !important;
+     padding: 1rem 2rem;
+}
+
+.ja-2-button {
+  box-shadow: inset 3px 3px 23px 1px red;
+  border: none;
+  padding: 1rem 3rem;
+  overflow: hidden;
+  clip-path: polygon(
+    4px 20px,
+    25px 3px,
+    98% 2px,
+    98% calc(100% - 21px),
+    calc(100% - 26px) 95%,
+    4px 93%,
+    3px 36px
+  );
+  background: rgb(var(--background-color)) !important;
+  color: rgb(var(--background-color)) !important ;
+}
+
+.ja-2-btn-container {
+  background: transparent;
+  width: fit-content;
+  height: fit-content;
+  clip-path: polygon(
+    2px 20px,
+    25px 1px,
+    99% 1px,
+    99% calc(100% - 20px),
+    calc(100% - 25px) 98%,
+    2px 96%,
+    1px 36px
+  );
+  transition: background-color 0.3s ease !important;
+  box-shadow: inset 3px 3px 23px 1px red !important;
+}
+
+.ja-2-btn-container:hover {
+  background-color: rgb(227, 102, 102) !important;
+}
+
+.Ja-button-save-summary:hover {
+  background-color: #89d289 ;
+}
+
+.transcription_detail_text{
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  color: var(--transcription_text) !important;
+}
+
+
+
+::-webkit-scrollbar {
+  width: 0px;
+}

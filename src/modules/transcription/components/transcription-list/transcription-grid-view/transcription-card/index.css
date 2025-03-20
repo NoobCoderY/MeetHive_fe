@@ -1,0 +1,102 @@
+.container-title {
+  text-align: center;
+  padding: 0 !important;
+  margin-bottom: 40px;
+  font-size: 40px;
+  color: #fff;
+  font-weight: 600;
+  line-height: 60px;
+}
+
+.transcription_card {
+  border: 0 !important;
+}
+
+.trans-container-card {
+  position: relative;
+  border: 2px solid transparent;
+  background: linear-gradient(
+    71deg,
+    var(--project-background-start),
+    var(--project-background-middle),
+    var(--project-background-end)
+  );
+  background-clip: padding-box;
+  border-radius: 45px;
+  padding:25px;
+}
+
+.bg-green-box,
+.bg-white-box,
+.bg-yellow-box,
+.bg-blue-box {
+  position: relative;
+}
+
+.bg-green-box::after,
+.bg-white-box::after,
+.bg-yellow-box::after,
+.bg-blue-box::after {
+  position: absolute;
+  top: -1px;
+  bottom: -1px;
+  left: -1px;
+  right: -1px;
+  content: '';
+  z-index: -1;
+  border-radius: 45px;
+}
+
+.bg-green-box::after {
+  background: linear-gradient(
+    71deg,
+    var(--green-box-gradient-start),
+    var(--green-box-gradient-middle),
+    var(--green-box-gradient-end)
+  );
+}
+
+.bg-white-box::after {
+  background: linear-gradient(
+    71deg,
+    var(--white-box-gradient-start),
+    var(--white-box-gradient-middle),
+    var(--white-box-gradient-end)
+  );
+}
+
+.bg-yellow-box::after {
+  background: linear-gradient(
+    71deg,
+    var(--yellow-box-gradient-start),
+    var(--yellow-box-gradient-middle),
+    var(--yellow-box-gradient-end)
+  );
+}
+
+.bg-blue-box::after {
+  background: linear-gradient(
+    71deg,
+    var(--blue-box-gradient-start),
+    var(--blue-box-gradient-middle),
+    var(--blue-box-gradient-end)
+  );
+}
+
+.transcription_card-title {
+  font-weight: 600;
+  color: white;
+  letter-spacing: -0.02em;
+  line-height: 40px;
+  font-style: normal;
+  font-size: 28px;
+  padding-bottom: 8px;
+}
+
+.transcription_card-description {
+  font-weight: 600;
+  line-height: 32px;
+  color: var(--description-color);
+  font-size: 16px;
+  max-width: 470px;
+}

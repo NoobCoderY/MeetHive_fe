@@ -1,0 +1,20 @@
+  <svg width='40' height='40' viewBox='0 0 80 80' fill='none' xmlns='http://www.w3.org/2000/svg'>
+    <rect x='1' y='1' width='78' height='78' rx='24' fill='url(#paint0_linear_1366_4547)' fill-opacity='0.15' stroke='url(#paint1_radial_1366_4547)' stroke-width='2'></rect>
+    <g transform='translate(18, 18) scale(2.0)'>
+      <svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='#2FCB89' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
+        <rect width='18' height='14' x='3' y='5' rx='2' ry='2' />
+        <path d='M7 15h4M15 15h2M7 11h2M13 11h4' />
+      </svg>
+    </g>
+    <defs>
+      <linearGradient id='paint0_linear_1366_4547' x1='0.0063367' y1='0.168432' x2='120.853' y2='119.009' gradientUnits='userSpaceOnUse'>
+        <stop stop-color='#2FCB89' stop-opacity='0.7'></stop>
+        <stop offset='0.489583' stop-color='#2FCB89' stop-opacity='0'></stop>
+        <stop offset='1' stop-color='#2FCB89' stop-opacity='0.7'></stop>
+      </linearGradient>
+      <radialGradient id='paint1_radial_1366_4547' cx='0' cy='0' r='1' gradientUnits='userSpaceOnUse' gradientTransform='translate(60 60) rotate(96.8574) scale(122.674 149.921)'>
+        <stop stop-color='#54E8A9'></stop>
+        <stop offset='1' stop-color='#1A3E31' stop-opacity='0.2'></stop>
+      </radialGradient>
+    </defs>
+  </svg>

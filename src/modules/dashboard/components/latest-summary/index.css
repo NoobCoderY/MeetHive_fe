@@ -1,0 +1,38 @@
+.latest-summary-outer {
+  clip-path: polygon(91% 8%, 94% 0, 100% 0, 100% 88%, 88% 100%, 0 100%, 0 8%);
+  background-color: gray;
+  height: 70vh;
+  width: 100%;
+}
+
+.latest-summary-inner {
+  background-color: var(--feedback-card);
+  clip-path: polygon(
+    calc(91% - -1px) calc(8% - -1px),
+    calc(94% - -1px) calc(0% - -1px),
+    calc(100% - 1px) calc(0% - -1px),
+    calc(100% - 1px) calc(88% - 1px),
+    calc(88% - 1px) calc(100% - 1px),
+    calc(0% + 1px) calc(100% - 1px),
+    calc(0% + 1px) calc(8% - -1px)
+  );
+  height: 100%;
+}
+
+.latest-summary-card-outer {
+  clip-path: polygon(0 0, 96% 0, 100% 8%, 100% 100%, 4% 100%, 0 92%);
+  background-color: gray;
+}
+
+.latest-summary-card-inner {
+  height: 100%;
+  clip-path: polygon(
+    calc(0% + 1px) calc(0% + 1px),
+    calc(96% - 1px) calc(0% + 1px),
+    calc(100% - 1px) calc(8% - -1px),
+    calc(100% - 1px) calc(100% - 1px),
+    calc(4% + 1px) calc(100% - 1px),
+    calc(0% + 1px) calc(92% - 1px)
+  );
+   background-color: var(--todos-summary-card-foreground) !important;
+}

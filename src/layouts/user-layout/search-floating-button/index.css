@@ -1,0 +1,70 @@
+.support_floating_button_outer{
+  clip-path: polygon(13% 0, 100% 0, 100% 91%, 87% 96%, 0 96%, 0 9%);
+  background: rgb(var(--primary)) !important;
+}
+
+.support_floating_button_inner {
+  clip-path: polygon(
+    calc(13% + 1px) 1px,
+    calc(100% - 1px) 1px,
+    98% calc(91% - -1px),
+    calc(87% - 1px) 100%,
+    1px 100%,
+    1px calc(9% + 1px)
+  );
+
+  padding: 0.3rem 0.5rem;
+  background-color: var(--feedback-card) !important;
+}
+
+.floating_button_outer {
+  clip-path: polygon(13% 0, 100% 0, 100% 91%, 87% 100%, 0 100%, 0 9%);
+  background: rgb(var(--primary)) !important;
+}
+
+.floating_button_inner {
+  padding: 0.3rem 0.5rem;
+  clip-path: polygon(
+    calc(13% + 1px) 1px,
+    calc(100% - 1px) 1px,
+    98% calc(91% - 1px),
+    calc(87% - 1px) 100%,
+    1px 100%,
+    1px calc(9% + 1px)
+  );
+  background-color: var(--feedback-card) !important;
+}
+
+.feed_back_floating_button_outer {
+  clip-path: polygon(13% 0, 100% 0, 100% 91%, 87% 100%, 0 100%, 0 9%);
+  background: rgb(var(--primary)) !important;
+}
+
+.feedback_floating_button_inner {
+  padding: 0.3rem 0.5rem;
+  clip-path: polygon(
+    calc(13% + 1px) 1px,
+    calc(100% - 1px) 1px,
+    98% calc(91% - 1px),
+    calc(87% - 1px) 97%,
+    1px 97%,
+    1px calc(9% + 1px)
+  );
+  background-color: var(--feedback-card) !important;
+}
+
+.floating_button_inner:hover {
+  color: var(--feedback-card) !important;
+}
+
+.feedback_floating_button_inner:hover {
+  color: var(--feedback-card) !important;
+}
+
+.support_floating_button_inner:hover {
+  color: var(--feedback-card) !important;
+}
+
+.sidebar{
+  background-color: var(--side-bar) !important;
+}

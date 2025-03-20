@@ -1,0 +1,539 @@
+{
+    "Index": {
+        "title": "Guten Tag!"
+    },
+    "login": {
+        "title": "Login",
+        "subtitle": "Einstieg in die agile Welt!",
+        "no_account": "noch kein Account?",
+        "signup_label": "dann melde dich hier an",
+        "login_failed": "Login fehlgeschlagen",
+        "login_success": "Login erfolgreich",
+        "forgot_password": "Passwort vergessen?",
+        "public_route_warnig": "Bitte loggen Sie sich aus, bevor Sie zum Login gehen"
+    },
+    "language": {
+        "change_language": "Sprache ändern"
+    },
+    "signup": {
+        "title": "Ein Konto erstellen",
+        "subtitle": "Einstieg in die agile Welt!",
+        "name_label": "Name",
+        "first_name_label": "Vorname",
+        "last_name_label": "Familienname",
+        "email_label": "Email",
+        "password_label": "Passwort",
+        "accept": "Accept",
+        "terms_and_conditions": "Geschäftsbedingungen",
+        "join_now": "Jetzt beitreten",
+        "already_account": "Sie haben bereits ein Konto?",
+        "login": "Login",
+        "email_validation": "Bitte eine gültige Email eingeben",
+        "name_required": "Name ist erforderlich",
+        "email_required": "E-Mail ist erforderlich",
+        "password_required": "Password ist erforderlich",
+        "password_length": "Das Passwort sollte mindestens 6 Zeichen lang sein.",
+        "confirm_password": "Bestätige das Passwort",
+        "password_not_match": "Passwort stimmt nicht überein",
+        "terms_validation": "Bitte akzeptieren Sie die Bedingungen und Konditionen",
+        "signup_failed": "Registrierung fehlgeschlagen",
+        "signup_success": "Registrierung erfolgreich.",
+        "confirm_email_sent": "Die Bestätigungs-E-Mail wurde an Ihre E-Mail-Adresse gesendet.",
+        "email_exist": "E-Mail existiert bereits",
+        "update_password_title": "Passwort aktualisieren",
+        "signup_verify_email": "Bitte warten Sie, bis wir Ihre E-Mail überprüft haben",
+        "Confirmation_template_title": "Wir haben Ihnen eine E-Mail geschickt",
+        "Confirmation_template_subtitle": "Bitte überprüfen Sie Ihren Briefkasten"
+    },
+    "header": {
+        "start_recording": "Aufnahme starten",
+        "stop_recording": "Aufnahme stoppen",
+        "edit_profile": "Profil bearbeiten",
+        "account_setting": "Konto-Einstellungen",
+        "delete_profile": "Konto löschen",
+        "delete_account_warning": "Wenn Sie Ihr Konto löschen, werden alle Ihre Daten dauerhaft von unseren Servern entfernt. Dies kann nicht rückgängig gemacht werden.",
+        "delete_account_lable": "Geben Sie zur Bestätigung KONTO LÖSCHEN ein",
+        "profile": {
+            "title": "Profil",
+            "personal_details": {
+                "title": "Persönliche Angaben",
+                "fields": {
+                    "name": "Name",
+                    "email": "E-Mail",
+                    "name_placeholder": "Geben Sie Ihren vollständigen Namen ein",
+                    "email_placeholder": "Geben Sie Ihre E-Mail-Adresse ein"
+                }
+            },
+            "save_changes": "Änderungen speichern",
+            "profile_updated_successfully": "Profil erfolgreich aktualisiert",
+            "profile_deleted_successfully": "Profil erfolgreich gelöscht",
+            "profile_delete_text_filled_warning": "Bitte geben Sie KONTO LÖSCHEN ein, um fortzufahren."
+        },
+        "logout": "Abmeldung",
+        "update_password": "Passwort aktualisieren",
+        "change_project": "Projekte"
+    },
+    "company": {
+        "company_listing_page_title": "Bitte wählen Sie das Unternehmen aus, dem Sie beitreten möchten.",
+        "company_enter_btn": "Eingeben"
+    },
+    "project": {
+        "project_title": "Projekte",
+        "add_project": "Projekt hinzufügen",
+        "project_search_placeholder": "Geben Sie einen Befehl ein oder suchen Sie...",
+        "project": "Projektname",
+        "company": "Unternehmen",
+        "role": "Rolle",
+        "status": "Status",
+        "view_project": "Projekt anzeigen",
+        "project_name": "Name",
+        "project_description": "Beschreibung",
+        "update_project": "Projekt aktualisieren",
+        "project_details": "Projektdetails",
+        "project_update_success": "Projektaktualisierung erfolgreich",
+        "project_update_failed": "Projektaktualisierung fehlgeschlagen",
+        "project_create_success": "Projekterstellung erfolgreich",
+        "project_create_failed": "Projekterstellung fehlgeschlagen",
+        "project_create": "Projekt erstellen",
+        "project_select": "Wir haben einige Arbeitsbereiche gefunden, die mit",
+        "project_select_warning": "Bitte wählen Sie eines der Projekte aus.",
+        "default_project_create_title": "Beginnen wir unsere Zusammenarbeit",
+        "default_project_create_btn": "Neues Projekt erstellen",
+        "project_name_des_required": "Projektname und Beschreibung sind erforderlich.",
+        "project_title_name": "Titel des Projekts"
+    },
+    "meeting": {
+        "meeting_title": "Besprechungen",
+        "add_meeting": "Besprechung hinzufügen",
+        "meeting_search_placeholder": "Geben Sie einen Befehl ein oder suchen Sie...",
+        "meeting_name": "Besprechungsname",
+        "company": "Unternehmen",
+        "project": "Projekt",
+        "meeting_description": "Beschreibung",
+        "view_meeting": "Anzeigen",
+        "update_meeting_btn": "Aktualisieren",
+        "update_meeting": "Besprechung aktualisieren",
+        "update": "Aktualisieren",
+        "meeting_details": "Besprechungsdetails",
+        "meeting_update_success": "Besprechung erfolgreich aktualisiert",
+        "meeting_update_failed": "Aktualisierung der Besprechung fehlgeschlagen",
+        "meeting_create_success": "Besprechung erfolgreich erstellt",
+        "meeting_create_failed": "Erstellung der Besprechung fehlgeschlagen",
+        "meeting_create": "Besprechung erstellen",
+        "meeting_select": "Wir haben einige Arbeitsbereiche gefunden, die mit",
+        "meeting_select_warning": "Bitte wählen Sie einen der Besprechungen aus.",
+        "default_meeting_create_title": "Lassen Sie uns unsere Zusammenarbeit beginnen",
+        "default_meeting_create_btn": "Neue Besprechung",
+        "meeting_name_des_required": "Besprechungsname und Beschreibung sind erforderlich"
+    },
+    "pagination": {
+        "prev": "Vorherige",
+        "next": "Nächste"
+    },
+    "sidebar": {
+        "home": "Heim",
+        "transcription": "Transkription",
+        "summary": "Zusammenfassung",
+        "upgrade": "Aktualisierung",
+        "feedback": "Rückmeldung"
+    },
+    "onboarding": {
+        "onboarding_success": "Erfolgreiches Onboarding",
+        "first_form_title": "Was beschreibt Sie am besten. Bitte wählen Sie eine der Optionen"
+    },
+    "audio_recorder": {
+        "title": "Audio Recorder",
+        "allow_recording": "Wir werden mit der Audioaufnahme beginnen, möchten Sie weitermachen?",
+        "allow_recording_alert_message": "Wenn Sie die Aufnahme nicht zulassen, können Sie keinen Ton aufnehmen",
+        "upload_failed": "Failed to save audio",
+        "upload_success": "Audio file saved successfully.  Please check after some time to see the transcription",
+        "save_audio": "Save Audio",
+        "confirm_button": "Bestätigen",
+        "cancel_button": "Abbrechen",
+        "recording_acc": "Bitte erteilen Sie zuerst die Aufnahmeerlaubnis."
+    },
+    "forgot_password": {
+        "title": "Passwort vergessen",
+        "send_reset_mail": "E-Mail zum Zurücksetzen des Passworts senden",
+        "send_reset_email_failed": "E-Mail zum Zurücksetzen des Passworts konnte nicht gesendet werden",
+        "send_reset_mail_success": "Die E-Mail zum Zurücksetzen des Passworts wurde an die folgende E-Mail-Adresse gesendet",
+        "update_password": "Passwort aktualisieren",
+        "update_password_failed": "Aktualisierung des Kennworts fehlgeschlagen",
+        "update_password_success": "Passwort erfolgreich aktualisiert"
+    },
+    "transcription": {
+        "title": "Transcriptions",
+        "real_time_transcription": "Echtzeit-Transkription",
+        "processing": "Verarbeitung...",
+        "audio": "Audio",
+        "transcription": "Transkription",
+        "transcription_name": "Transkriptionsname",
+        "transcription_details": "Transkriptionsdetails",
+        "transcription_details_title": "Titel",
+        "transcription_details_des": "Beschreibung",
+        "transcription_duration": "Dauer",
+        "created_by": "Erstellt von",
+        "description": "Beschreibung",
+        "save": "Speichern",
+        "save_failed": "Speichern fehlgeschlagen",
+        "save_success": "Transkription erfolgreich gespeichert.",
+        "pending_transcription_msg": "Die Transkription wird derzeit erstellt...",
+        "generate_summary_dialog": "Bitte haben Sie etwas Geduld, während die Zusammenfassung erstellt wird. Aktualisieren Sie die Seite nach einer kurzen Wartezeit, um die neuesten Aktualisierungen zu sehen, und nehmen Sie während dieses Vorgangs keine Löschungen oder Änderungen vor.",
+        "generate_transcription_dialog": "Bitte haben Sie Geduld, während die Transkription erstellt wird. Aktualisieren Sie die Seite nach einer kurzen Wartezeit, um die neuesten Updates zu sehen, und vermeiden Sie während dieses Vorgangs jegliche Löschungen oder Änderungen.",
+        "generate_summary": "Zusammenfassung erstellen",
+        "save_Transcription": "Transkription speichern",
+        "clear_transcription": "Transkription löschen",
+        "transcription_create": "Transkription erstellen",
+        "null_transcription": "Keine Transkription gefunden",
+        "delete": "Transkription löschen",
+        "delete_confirm_alert_message": "Diese Aktion kann nicht rückgängig gemacht werden. Dies wird die Audiodatei und die Transkription dauerhaft löschen.",
+        "delete_confirm_alert_cancel_button": "Abbrechen",
+        "delete_confirm_alert_confirm_button": "Bestätigen",
+        "update": " aktualisieren",
+        "view": "Ansicht",
+        "update_success": "Transkription erfolgreich aktualisiert.",
+        "update_failed": "Fehler beim Aktualisieren der Transkription.",
+        "delete_failed": "Löschen der Transkription fehlgeschlagen",
+        "delete_success": "Transkription erfolgreich gelöscht",
+        "time_alert": {
+            "title": "Zeitlimit überschritten",
+            "exceed_time_warning": "Sie haben noch 5 Minuten von Ihrem 320-minütigen Transkriptionskontingent übrig. Bitte schließen Sie Ihre Arbeit ab, um zu vermeiden, dass Sie Ihr Limit überschreiten.",
+            "exceed_time_exit": "Sie haben das Limit Ihrer verfügbaren Transkriptionsminuten erreicht. Ihr aktuelles Abonnement umfasst 320 Minuten Transkription pro Monat, und diese Sitzung hat dieses Limit erschöpft. Bitte upgraden Sie Ihren Plan oder warten Sie auf Ihren nächsten Abrechnungszeitraum, um den Dienst weiterhin nutzen zu können."
+        },
+        "start_summary": "Start Zusammenfassung",
+        "summary_success": "Zusammenfassung erfolgreich gespeichert.",
+        "summary_error": "Zusammenfassung konnte nicht gespeichert werden.",
+        "summary_crud_warning": "Beim Aktualisieren der Zusammenfassung ist ein Fehler aufgetreten",
+        "delete_confirm": {
+            "title": "Sind Sie absolut sicher?",
+            "description": "Diese Aktion kann nicht rückgängig gemacht werden. Dadurch werden die Audiodatei und die Transkription dauerhaft gelöscht"
+        },
+        "save_confirm": {
+            "title": "Sind Sie sich absolut sicher?",
+            "description": "Diese Aktion kann nicht rückgängig gemacht werden. Dadurch wird die Zusammenfassung dauerhaft gespeichert",
+            "confirm_button": "Bestätigen",
+            "cancel_button": "Abbrechen"
+        },
+        "delete_confirm_summary": {
+            "title": "Sind Sie absolut sicher?",
+            "description": "Diese Aktion kann nicht rückgängig gemacht werden. Dies wird die Zusammenfassung dauerhaft löschen."
+        },
+        "summary_edit_permanent_save_failed": "Die Zusammenfassung konnte nicht gespeichert werden. Bitte versuchen Sie es später noch einmal.",
+        "summary_edit_permanent_save_success": "Zusammenfassung gespeichert Permanent erfolgreich",
+        "delete_summary_alert_message": "Sind Sie sicher, dass Sie diese Zusammenfassung löschen möchten? Weil es auch Todos löscht, die von Ihnen erstellt wurden",
+        "pending_summary_msg": "Die Zusammenfassung wird gerade erstellt...",
+        "downlaod_pdf": "PDF herunterladen",
+        "edit_point": "Punkt bearbeiten",
+        "add_point": "Punkt hinzufügen",
+        "save_summary": "Zusammenfassung speichern",
+        "delete_summary": "Zusammenfassung löschen",
+        "save_changes": "Änderungen speichern",
+        "cancel_changes": "Änderungen abbrechen",
+        "save_summary_success": "Zusammenfassung erfolgreich gespeichert.",
+        "save_summary_error": "Zusammenfassung konnte nicht gespeichert werden.",
+        "todos": "Todos",
+        "summary": "Zusammenfassung",
+        "summary_edit_failed": "Bearbeiten fehlgeschlagen",
+        "summary_edit_success": "Bearbeiten erfolgreich",
+        "summary_card_title_update": " Titel erfolgreich aktualisiert",
+        "null_summary": "Keine Zusammenfassung gefunden",
+        "no_result": "Kein Ergebnis gefunden",
+        "summary_page_title": "Zusammenfassung",
+        "summary_success_dailog_text": "Zusammenfassung wurde gestartet. Bitte überprüfen Sie dies nach einiger Zeit.",
+        "todo_assignee_name": "Zugeordnet",
+        "todo_assignee_required": " Bitte geben Sie den Namen ein",
+        "todo_todo_required": " Bitte geben Sie die Aufgabe ein",
+        "todo_edit": {
+            "title": "Todo bearbeiten",
+            "description": "Nehmen Sie hier Änderungen an Ihrem Todo vor. Klicken Sie auf Speichern, wenn Sie fertig sind.",
+            "save_changes": "Änderungen speichern",
+            "todo_edit_failed": "Todo konnte nicht bearbeitet werden"
+        },
+        "todo_add": {
+            "title": "Todo hinzufügen",
+            "description": "Fügen Sie hier Ihr Todo hinzu. Klicken Sie auf Speichern, wenn Sie fertig sind.",
+            "add_todo": "Todo hinzufügen",
+            "todo_add_failed": "Todo konnte nicht hinzugefügt werden"
+        },
+        "todo_input_field_assignee_name": "Zugewiesener Name",
+        "todo_input_field_todo": "Aufgaben",
+        "todo_input_field_warnings": "Bitte alle Felder ausfüllen",
+        "todo_input_field_due_date": "Fälligkeitsdatum",
+        "todo_input_field_due_date_placeholder": "Datum auswählen",
+        "todo_add_warning": "Bitte Summary für Add Todo auswählen",
+        "no_due_date": "Fälligkeitsdatum",
+        "filters": {
+            "search_placeholder": "Geben Sie den Namen der Transkription ein",
+            "title": "Wählen Sie Zeitspanne",
+            "first_filter": "Letzte 7 Tage",
+            "second_filter": "Vergangene Monate",
+            "third_filter": "Vergangenes Jahr"
+        },
+        "todo_restriction": "Todo ist in dieser Version nicht verfügbar"
+    },
+    "upload_recording": {
+        "upload_recording_button": "Audio hochladen",
+        "meeting_provider_page_title": "Meeting-Anbieter",
+        "meeting_provider_page_subtitle": "Wählen Sie Meeting-Anbieter aus",
+        "recording_list_page_title": "Liste der Aufzeichnungen",
+        "recording_list_page_subtitle": "Wählen Sie Ihre Aufnahme aus",
+        "invalid_date_error_first": "Bitte nur Datum bis heute auswählen",
+        "invalid_date_error_second": "Bitte wählen Sie nur das Datum bis heute aus",
+        "zoom_transcription_success": "Transkription erfolgreich gespeichert",
+        "zoom_transcription_error": "Zoom-Transkription konnte nicht gespeichert werden",
+        "token_delete_success": "Token erfolgreich gelöscht",
+        "token_delete_error": "Token löschen fehlgeschlagen",
+        "select_recording": "Aufnahme auswählen",
+        "recording_acc": "Es werden nur MP4- und Mp3-Dateien unterstützt.",
+        "upload_failed": "Aufzeichnung konnte nicht hochgeladen werden",
+        "upload_success": "Aufnahme erfolgreich hochgeladen",
+        "name": "Name",
+        "name_required": "Name ist erforderlich",
+        "transcription_start": "Bitte warten Sie einige Zeit, während die Transkription erstellt wird",
+        "file_upload_success": "Datei erfolgreich hochgeladen.",
+        "file_converter_notificationMessage": "Wir haben Anpassungen vorgenommen, um einen reibungslosen Ablauf zu gewährleisten.",
+        "generate_transcription": "Transkription erstellen.",
+        "restriction": {
+            "fileTypeNotAllowed": "Dateityp nicht erlaubt! Erlaubte Dateitypen sind: audio/amr, audio/flac, audio/wav, audio/ogg, audio/mp3, video/mp4, video/webm, audio/m4a.",
+            "fileSizeTooLarge": "Die Dateigröße muss weniger als 200mb'",
+            "durationLoadError": "Fehler beim Laden der Mediendatei zur Dauerüberprüfung!"
+        }
+    },
+    "dashboard": {
+        "todo_card_title": "Heutige Todos",
+        "summary_card_title": " Letzte Zusammenfassung",
+        "error": "Etwas ist schief gelaufen"
+    },
+    "download_pdf": {
+        "download_pdf_button": "Laden Sie Ihr PDF herunter"
+    },
+    "subscription": {
+        "subscription_page_title": "Abonnements",
+        "subscription_page_description": "Holen Sie das Beste aus JustAgile heraus. Wählen Sie Ihr Abonnement und nutzen Sie es sofort!",
+        "test": {
+            "title": "Immer noch nicht sicher?",
+            "description": "Fangen wir an! Probieren Sie es 30 Tage lang aus, ohne einen Cent zu bezahlen - überzeugen Sie sich selbst, risikofrei",
+            "test_btn": "Testen"
+        },
+        "plan_selection_monthly": "Monatlich",
+        "plan_selection_yearly": "jährlich",
+        "choose_plan_btn": "Pauschalen",
+        "features": {
+            "feature1": "KI-Empfehlungen",
+            "feature2": "Automatisierungen",
+            "feature3": "Online Meetings",
+            "feature4": "Transkribierungen",
+            "feature5": "Timeboxing",
+            "feature6": "Integrations"
+        },
+        "feature_validity_unit_monthly": "Monat",
+        "feature_validity_unit_yearly": "Jahr",
+        "subscription_recommended": "Empfohlen",
+        "choose_plan_dialog_description": "“Ups... Schön, dass Ihnen unser Produkt gefällt, aber leider sind wir noch nicht ganz fertig. Wenn Sie weiterhin unterstützen möchten, klicken Sie bitte auf die Schaltfläche „Support“. Danke schön.”",
+        "support_btn": "Unterstützung",
+        "subscription_btn": "Upgrade",
+        "contacts": {
+            "contact_us": "Kontaktieren Sie uns",
+            "call": "Rufen Sie uns an",
+            "email": "E-Mail senden an"
+        },
+        "discount_description": "Wird jährlich abgerechnet und spart"
+    },
+    "support": {
+        "email": "E-Mail",
+        "message": "Nachricht",
+        "subject": "Betreff",
+        "submit": "Absenden",
+        "email_validation": "Bitte geben Sie eine gültige E-Mail-Adresse ein",
+        "email_required": "E-Mail ist erforderlich",
+        "subject_required": "Betreff ist erforderlich",
+        "message_required": "Nachricht ist erforderlich",
+        "support_failed": "Fehler beim Senden der Supportanfrage",
+        "support_successful": "Ihre Supportanfrage wurde erfolgreich gesendet"
+    },
+    "feedback": {
+        "feedback_btn": "Rückmeldung",
+        "feedback_description": "Was halten Sie bisher von Just Agile?",
+        "like": "gefällt mir",
+        "dislike": "gefällt mir nicht",
+        "like_section": {
+            "description": " Es ist großartig, dass dir unser Produkt gefällt. Wenn du uns weiter unterstützen möchtest, freuen wir uns über deine Unterstützung",
+            "click_here_link": "klicken hier"
+        },
+        "dislike_section": {
+            "description": " Wie schade, dass wir dich nicht überzeugen konnten. Wie können wir es besser machen?",
+            "cancel_button": "Stornieren",
+            "send_feedback_button": "Feedback abschicken"
+        },
+        "feedback_success": "Danke für Ihre Bewertung",
+        "feedback_failed": "Feedback konnte nicht gesendet werden"
+    },
+    "docs": {
+        "welcome": "Willkommen bei Docs",
+        "zoom": {
+            "title": "Zoom-Integration",
+            "installation": "Installation der Zoom-App",
+            "installation_description": "Um die justagile zoom app zu installieren, folgen Sie bitte den Schritten",
+            "installation_steps": {
+                "one": "Zum Zoom-Marktplatz gehen (https://marketplace.zoom.us)",
+                "two": "Suchen Sie nach justagile zoom app und fügen Sie die App zu Ihrem Konto hinzu"
+            },
+            "integration": "Zoom-Integration",
+            "integration_description": "Sobald die Zoom-App auf Ihrem Konto installiert ist, können Sie sie in Ihrer App verwenden, um die Aufnahmen zu erhalten und die Transkription zu starten",
+            "integration_steps": {
+                "one": "Nach der Anmeldung klicken Sie auf die Schaltfläche Aufnahme hochladen",
+                "two": "Wählen Sie Zoom aus der Liste der Meeting-Anbieter",
+                "three": "Wenn der Zoom-Zugriff nicht erlaubt ist, werden Sie zur Autorisierung auf die Zoom-Seite weitergeleitet.  Klicken Sie auf die Schaltfläche Zulassen",
+                "four": "Nachdem Sie dies erlaubt haben, werden Sie auf die Seite von agile weitergeleitet. Nachdem Sie den Zoom ausgewählt und auf Weiter geklickt haben, werden Ihnen die verfügbaren Aufnahmen innerhalb des Datumsbereichs angezeigt.  Wählen Sie eine Aufnahme aus und klicken Sie auf Weiter, um die Transkription zu starten."
+            },
+            "demo": "Demo",
+            "removal": {
+                "title": "Deinstallieren",
+                "description": "Um die justagile Zoom-App zu deinstallieren, folgen Sie bitte den Schritten",
+                "steps": {
+                    "one": "Zum Zoom Marketplace (https://marketplace.zoom.us)",
+                    "two": "Suchen Sie nach der justagile Zoom-App und klicken Sie auf Verwalten",
+                    "three": "Klicken Sie auf die justagile Zoom-App und entfernen Sie sie"
+                }
+            }
+        }
+    },
+    "impressum": {
+        "title": "Impressum",
+        "company": "justAgile UG (haftungsbeschränkt)",
+        "management": "Geschäftsführung: Diana Theocharidou, Sarah Klein",
+        "address_1": "Frankenstrasse 81",
+        "address_2": "18439 Stralsund",
+        "email": "Email: info@just-agile.com",
+        "register": "Handelsregister: Amtsgericht Stralsund, HRB 22550",
+        "ust": "USt-IdNr.: (noch nicht erteilt)"
+    },
+    "datenschutz": {
+        "title": "Datenschutzrichtlinie",
+        "line_1": "Willkommen auf unserer Datenschutzseite. Hier bei justAgile sind wir bestrebt, die Privatsphäre und Sicherheit Ihrer Daten zu schützen. Bitte lesen Sie die folgenden Informationen sorgfältig durch, um zu verstehen, wie wir Ihre Daten sammeln, verwenden und schützen.",
+        "line_2": "1. Arten von gesammelten Daten",
+        "line_3": "Wenn Sie sich über unsere Webseite einloggen, erfassen wir Ihren Namen und Ihre E-Mail-Adresse, um Ihnen den Zugang zu unserem Tool zu ermöglichen. Zusätzlich erfassen wir bestimmte Informationen über Ihre Interaktionen auf unserer Webseite, wie z.B. Klicks auf Buttons oder die verbrachte Zeit auf der Seite. Während der Nutzung unseres Tools erfassen wir Audio- und Videomaterial sowie Textinformationen, die während der Meetings generiert werden.",
+        "line_4": "2. Zweck der Datenerfassung",
+        "line_5": "Die Daten werden gesammelt, um Ihnen den Zugang zu unserem Tool zu ermöglichen, um die Benutzererfahrung auf unserer Webseite zu verbessern, Transkriptionen von Meetings zu erstellen, Zusammenfassungen zu generieren und ToDos zu filtern und daran zu erinnern.",
+        "line_6": "3. Nutzung der Daten",
+        "line_7": "Die gesammelten Daten werden verwendet, um Ihre Anmeldung zu verwalten, Ihnen den Zugang zu unserem Tool zu ermöglichen, die Leistung unserer Webseite zu analysieren und zu verbessern, die Qualität unserer Dienstleistungen zu verbessern, personalisierte Erinnerungen für ToDos bereitzustellen und unsere Produkte weiter zu entwickeln.",
+        "line_8": "4. Datenfreigabe",
+        "line_9": "Wir geben Ihre persönlichen Daten nicht an Dritte weiter, außer wenn es für die Bereitstellung unserer Dienstleistungen erforderlich ist oder wenn dies gesetzlich vorgeschrieben ist. Die auf unserer Webseite gesammelten Informationen werden möglicherweise anonymisiert und aggregiert verwendet, um Trends und Muster zu analysieren.",
+        "line_10": "5. Datenspeicherung",
+        "line_11": "Ihre persönlichen Daten werden sicher gespeichert und für die Dauer Ihrer Nutzung unseres Tools aufbewahrt. Die auf unserer Webseite gesammelten Informationen können in anonymisierter Form für einen längeren Zeitraum gespeichert werden, um die Leistung der Webseite zu analysieren.",
+        "line_12": "6. Datensicherheit",
+        "line_13": "Wir treffen strenge Sicherheitsmaßnahmen, um Ihre Daten vor unbefugtem Zugriff, Verlust oder Missbrauch zu schützen.",
+        "line_14": "7. Benutzerrechte",
+        "line_15": "Sie haben das Recht, auf Ihre persönlichen Daten zuzugreifen, sie zu korrigieren oder zu löschen. Bitte kontaktieren Sie uns, wenn Sie Ihre Benutzerrechte ausüben möchten.",
+        "line_16": "8. Kontaktinformationen",
+        "line_17": "Wenn Sie Fragen oder Bedenken bezüglich des Datenschutzes haben, kontaktieren Sie uns bitte unter info@just-agile.com",
+        "line_18": "9. Änderungen der Datenschutzrichtlinie",
+        "line_19": "Bitte beachten Sie, dass diese Datenschutzrichtlinie von Zeit zu Zeit aktualisiert werden kann. Über wesentliche Änderungen werden wir Sie informieren.",
+        "line_20": "10. Widerruf und Löschung von Daten",
+        "line_21": "Sie haben jederzeit das Recht, Ihre Einwilligung zur Datenerfassung und - verarbeitung zu widerrufen oder die Löschung Ihrer Daten zu beantragen. Bitte beachten Sie, dass die Löschung Ihrer Daten dazu führen kann, dass Sie keinen Zugang mehr zu unserem Tool haben oder unsere Dienste nicht mehr nutzen können.",
+        "line_22": "Vielen Dank für Ihr Vertrauen. Ihre Privatsphäre ist uns wichtig."
+    },
+    "agbs": {
+        "general_terms": {
+            "title": "Allgemeine Geschäftsbedingungen",
+            "description": "Bitte lesen Sie diese Allgemeinen Geschäftsbedingungen (AGBs) sorgfältig durch, bevor Sie justAgile nutzen. Durch die Nutzung dieses Tools erklären Sie sich mit diesen Bedingungen einverstanden.",
+            "line_1": "Nutzung und Zugang zum justAgile-Tool",
+            "line_2": "Sie erhalten Zugang zu unserem Tool durch eine Registrierung über unsere Webseite und Plattform.",
+            "line_3": "Ihr Konto muss von einem Menschen registriert werden. Konten, die durch „Bots“ oder andere automatische Methoden registriert wurden, sind nicht zulässig. Außerdem müssen Sie 18 Jahre oder älter sein.",
+            "line_4": "Sie sind dafür verantwortlich, alle Informationen, die Sie bei der Registrierung angeben, korrekt und aktuell zu halten.",
+            "line_5": "Sie sind dafür verantwortlich, die Sicherheit Ihres Kontos und Ihres Passworts zu gewährleisten. Wir haften nicht für Verluste oder Schäden, die durch die Nichteinhaltung dieser Sicherheitsverpflichtung entstehen.",
+            "line_6": "Die Nutzung des Tools erfolgt auf eigenes Risiko. Wir übernehmen keine Haftung für Schäden, die durch die Nutzung des Tools entstehen."
+        },
+        "Restrictions_use": {
+            "title": "Nutzungseinschränkungen und verbotene Aktivitäten",
+            "line_1": {
+                "title": "Die Nutzung des Tools darf nicht für illegale Aktivitäten oder zur Förderung von solchen Aktivitäten missbraucht werden. Zu den verbotenen Aktivitäten gehören unter anderem:",
+                "line_1": "Die Verbreitung von diffamierendem, belästigendem, bedrohlichem oder rechtswidrigem Material;",
+                "line_2": "Die Durchführung von Betrug, Phishing oder anderen betrügerischen Aktivitäten;",
+                "line_3": "Die Verletzung von geistigen Eigentumsrechten Dritter;",
+                "line_4": "Die Verwendung des Tools für den unerlaubten Zugriff auf Computersysteme oder Netzwerke;",
+                "line_5": ") Die Verbreitung von Viren, Würmern, Trojanern oder anderer schädlicher Software;",
+                "line_6": "Die Belästigung anderer Benutzer oder die Störung der ordnungsgemäßen Funktion des Tools."
+            },
+            "line_2": "Wir behalten uns das Recht vor, Benutzerkonten zu sperren oder zu löschen, die gegen diese Bestimmungen verstoßen, und wir werden mit den entsprechenden Behörden zusammenarbeiten, um gegen illegale Aktivitäten vorzugehen."
+        },
+        "fees_billing": {
+            "title": "Gebühren und Abrechnung",
+            "line_1": "Die Nutzung unseres Tools ist kostenpflichtig gemäß unserem Pricing. Für den Zeitraum von 4 Wochen kann unser Tool kostenlos getestet werden, dafür fallen keine zusätzlichen Gebühren an.",
+            "line_2": "Alle Gebühren sind in der jeweiligen Währung zu entrichten und sind nicht erstattungsfähig, es sei denn, dies ist gesetzlich vorgeschrieben.",
+            "line_3": "Die Preise für die Nutzung von justAgile und Preispläne können sich ändern. Sollte justAgile aus irgendeinem Grund den von Ihnen genutzten Plan aufheben oder ein Upgrade auf einen aktuellen Plan verlangen, werden wir Sie mindestens einen (1) Monat vorher per E-Mail informieren.",
+            "line_4": "Wir haften weder Ihnen noch Dritten gegenüber für Änderungen, Preisänderungen, Aussetzungen oder die Einstellung des justAgile Tools."
+        },
+        "intellectual_property": {
+            "title": "Geistiges Eigentum",
+            "line_1": "Alle Rechte an geistigem Eigentum in Bezug auf das justAgile Tool und seine Inhalte (einschließlich, aber nicht beschränkt auf Software, Designs, Texte und Grafiken) bleiben bei justAgile.",
+            "line_2": "Die Nutzung des Tools gewährt Ihnen keine Rechte an geistigem Eigentum."
+        },
+        "data_protection": {
+            "title": "Datenschutz und Zugang zu justAgile Account",
+            "line_1": {
+                "section_1": "Ihre Nutzung des Tools unterliegt unserer",
+                "link_1": "Datenschutzrichtlinie",
+                "section_2": "die Sie auf unserer",
+                "link_2": "Webseite"
+            },
+            "line_2": "Durch die Nutzung des Tools erklären Sie sich mit der Erhebung, Verarbeitung und Nutzung Ihrer Daten gemäß unserer",
+            "line_3": "In einigen Fällen kann es erforderlich sein, dass justAgile-Mitarbeiter auf Ihr Konto und Ihre Inhalte zugreifen, um ein Problem zu diagnostizieren. Wenn Sie sich an unser Support-Team wenden, bedeutet dies, dass Sie justAgile-Mitarbeitern den Zugriff auf Ihr Konto erlauben, wenn dies erforderlich ist, um Ihnen zu helfen. Wenn Sie Hilfe wünschen, ohne die Erlaubnis zum Zugriff auf Ihr Konto zu erteilen, geben Sie dies bitte in Ihrer Kommunikation mit unserem Support-Team an, und diese Anfragen werden so weit wie möglich berücksichtigt."
+        },
+        "changes": {
+            "title": "Änderungen und Anpassungen des Tools durch justAgile",
+            "line_1": "Wir behalten uns das Recht vor, unser Tool jederzeit und von Zeit zu Zeit mit oder ohne Vorankündigung vorübergehend oder dauerhaft zu ändern oder einzustellen. Wir werden uns jedoch nach besten Kräften bemühen, unsere Kunden über anstehende Systemwartungen und/oder Serviceunterbrechungen zu informieren.",
+            "line_2": "Alle neuen Funktionen, die da aktuelle justAgile Tool erweitern oder verbessern, einschließlich der Veröffentlichung neuer Tools und Ressourcen, unterliegen diesen Nutzungsbedingungen."
+        },
+        "limitation": {
+            "title": " Haftungsbeschränkung",
+            "line_1": ". In keinem Fall haften wir für Schäden, die durch die Nutzung des Tools entstehen, einschließlich, aber nicht beschränkt auf direkte, indirekte, zufällige oder Folgeschäden.",
+            "line_2": "Wir haften nicht für Unterbrechungen oder Ausfälle des Tools, die außerhalb unserer Kontrolle liegen, einschließlich, aber nicht beschränkt auf Internetstörungen, Hardwareausfälle oder Handlungen Dritter."
+        },
+        "changes_terms": {
+            "title": "Änderungen der AGBs",
+            "line_1": "Wir behalten uns das Recht vor, diese Nutzungsbedingungen nach eigenem Ermessen jederzeit mit oder ohne vorherige Ankündigung zu ändern, zu modifizieren, zu ergänzen oder zu löschen, vorausgesetzt, wir bemühen uns in angemessener Weise, Sie per E-Mail über wesentliche Änderungen (die wir nach eigenem Ermessen festlegen) zu informieren.",
+            "line_2": "Sollten zukünftige Änderungen dieser Nutzungsbedingungen für Sie inakzeptabel sein oder dazu führen, dass Sie diese nicht mehr einhalten können, müssen Sie die Nutzung des justAgile Tools unverzüglich einstellen.",
+            "line_3": "Ihre fortgesetzte Nutzung des Tools nach der Änderung der AGBs gilt als Annahme der geänderten Bedingungen."
+        },
+        "termination": {
+            "title": "Beendigung",
+            "line_1": {
+                "section_1": "Sie sind allein dafür verantwortlich, Ihr Konto ordnungsgemäß zu kündigen.  Schreiben Sie bitte hierzu eine E-Mail an",
+                "section_2": "Die Kündigung kann zum Monatsende mit einer Frist von einem Monat erfolgen."
+            },
+            "line_2": "justAgile behält sich das Recht vor, Testkonten die sechzig (60) Tage lang keine Aktivität (Logins) aufweisen nach Ablauf zu kündigen.",
+            "line_3": "Jede Kündigung Ihres Kontos hat die Deaktivierung oder Löschung Ihres Kontos und die Entfernung aller Inhalte in Ihrem Konto zur Folge. Bitte beachten Sie, dass wir eine Zeit lang restliche Kontoinformationen in unseren Sicherungs- und/oder Archivierungskopien unserer Datenbank aufbewahren können. Wir werden uns im Rahmen unserer Möglichkeiten bemühen, Ihre Daten so schnell wie möglich zu löschen, nachdem Sie uns Ihre Absicht mitgeteilt haben.",
+            "line_4": "Wir behalten uns das Recht vor, Ihre Nutzung des Tools jederzeit und aus beliebigem Grund zu beenden oder einzuschränken, ohne vorherige Ankündigung oder Haftung."
+        },
+        "applicable_law": {
+            "title": "Anwendbares Recht und Gerichtsstand",
+            "line_1": "Diese AGBs unterliegen dem Recht der Bundesrepublik Deutschland.",
+            "line_2": "Alle Streitigkeiten im Zusammenhang mit diesen AGBs unterliegen der ausschließlichen Zuständigkeit der Gerichte mit Sitz in Stralsund."
+        },
+        "Severability_clause": {
+            "title": "Salvatorische Klausel",
+            "description": "Sollten einzelne Bestimmungen dieser AGBs unwirksam oder undurchführbar sein oder werden, bleiben die übrigen Bestimmungen hiervon unberührt. Anstelle der unwirksamen oder undurchführbaren Bestimmungen gelten die gesetzlichen Regelungen."
+        }
+    },
+    "error_page": {
+        "title": "Seite nicht gefunden",
+        "description": "Die gesuchte Seite existiert nicht oder wurde verschoben.",
+        "back_to_home": "Zurück nach Hause"
+    },
+    "global_search": {
+        "search_placeholder": "Zusammenfassungen oder Transkriptionen durchsuchen...",
+        "tabs": {
+            "tab_0": "Alle",
+            "tab_1": "Zusammenfassungen",
+            "tab_2": "Transkriptionen"
+        }
+    },
+    "fetch_error": {
+        "title": "Ups! Etwas ist schiefgelaufen.",
+        "description": {
+            "line_1": "Es tut uns leid, aber ein Fehler ist bei der Verarbeitung aufgetreten ",
+            "line_2": "Bitte versuchen Sie es später erneut oder kontaktieren Sie unser Support-Team, falls das Problem weiterhin besteht."
+        }
+    }
+}

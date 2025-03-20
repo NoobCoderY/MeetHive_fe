@@ -1,0 +1,98 @@
+.ja-2-button {
+  box-shadow: inset 3px 3px 23px 1px red;
+  border: none;
+  padding: 1rem 3rem;
+  overflow: hidden;
+  clip-path: polygon(
+    4px 20px,
+    25px 3px,
+    98% 2px,
+    98% calc(100% - 21px),
+    calc(100% - 26px) 95%,
+    4px 93%,
+    3px 36px
+  );
+  background: rgb(var(--background-color)) !important;
+  color: rgb(var(--background-color)) !important ;
+}
+
+.ja-2-btn-container {
+  background: transparent;
+  width: fit-content;
+  height: fit-content;
+  clip-path: polygon(
+    2px 20px,
+    25px 1px,
+    99% 1px,
+    99% calc(100% - 20px),
+    calc(100% - 25px) 98%,
+    2px 96%,
+    1px 36px
+  );
+  transition: background-color 0.3s ease !important;
+  box-shadow: inset 3px 3px 23px 1px red !important;
+}
+
+.ja-2-btn-container:hover {
+  background-color: rgb(227, 102, 102) !important;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+.outer_todo_summary_card {
+  width: 100%;
+  height: fit-content;
+  background: gray !important;
+  clip-path: polygon(
+    0% 100%,
+    70% 100%,
+    100% 77%,
+    100% 0,
+    87% 0,
+    82% 10%,
+    63% 10%,
+    60% 0,
+    39% 0,
+    34% 11%,
+    16% 11%,
+    12% 0,
+    0% 0%
+  );
+}
+
+.inner_todo_summary_card {
+  padding: 1rem 3rem;
+  overflow: hidden;
+  clip-path: polygon(
+    1px calc(100% - 1px),
+    calc(70% - 1px) calc(100% - 1px),
+    calc(100% - 1px) calc(77% - 1px),
+    calc(100% - 1px) 1px,
+    calc(87% + 1px) 1px,
+    calc(82% + 1px) calc(10% + 1px),
+    calc(63% - 1px) calc(10% + 1px),
+    calc(60% - 1px) 1px,
+    calc(39% + 1px) 1px,
+    calc(34% + 1px) calc(11% + 1px),
+    calc(16% - 1px) calc(11% + 1px),
+    12% 2px,
+    1px 1px
+  );
+  background-color: var(--todo-summary-card) !important;
+}
+
+.edit_summary_card {
+  display: block;
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+.fade-in {
+  opacity: 0;
+}
+
+.Ja-button-save-summary:hover {
+  background-color: #89d289 ;
+}

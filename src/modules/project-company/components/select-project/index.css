@@ -1,0 +1,39 @@
+@keyframes fadeIn {
+ from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.6s ease-out;
+}
+
+.glassmorphism {
+  position: relative;
+  background: rgba(255, 255, 255, 0.1); 
+  border-radius: 15px;
+  backdrop-filter: blur(15px); 
+  -webkit-backdrop-filter: blur(15px); 
+  border: 1px solid rgba(255, 255, 255, 0.25); 
+  box-shadow: 
+    0 4px 8px rgba(0, 0, 0, 0.2), 
+    inset 0 4px 8px rgba(0, 255, 0, 0.5); 
+  padding: 20px; 
+  overflow: hidden; 
+}
+
+.select_project_card{
+    border: 1px solid rgba(255, 255, 255, 0.25); 
+    border-radius: 10px;
+   
+
+}
+
+.select_project_card:hover{
+ background-color: rgb(31, 31, 31);
+}

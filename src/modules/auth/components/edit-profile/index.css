@@ -1,0 +1,12 @@
+.edit_profile_card{
+  
+  background-color: var(--edit_profile_card);
+}
+
+.edit_profile_header{
+  background-color: var(--edit_profile_header);
+}
+
+.edit_profile_accordion_trigger:hover{
+   background-color: var(--edit_profile_trigger_hover);
+}

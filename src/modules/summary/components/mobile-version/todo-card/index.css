@@ -1,0 +1,29 @@
+.todos_summary_outer_card {
+  clip-path: polygon(76% 9%, 81% 0, 100% 0, 100% 91%, 81% 100%, 0 100%, 0 9%);
+  background-color: gray;
+}
+
+.todos_summary_inner_card {
+  clip-path: polygon(
+  calc(76% - -1px) calc(9% - -1px),
+  calc(81% - -1px) calc(0% - -1px),
+  calc(100% - 1px) calc(0% - -1px),
+  calc(100% - 1px) calc(91% - 1px),
+  calc(81% - 1px) calc(100% - 1px),
+  calc(0% + 1px) calc(100% - 1px),
+  calc(0% + 1px) calc(9% - -1px)
+);
+  background-color: var(--M-todos-summary-card);
+}
+
+.card_close_button_outer{
+  clip-path: polygon(21% 0, 100% 0%, 100% 100%, 0% 100%);
+  background-color: gray;
+}
+
+.card_close_button_inner{
+  clip-path: polygon(calc(21% - -1px) 2%, calc(100% - 1px) 2%, calc(100% - 1px) 98%, calc(0% + 1px) 98%);
+ background-color: hsl(var(--card)) !important;
+
+}
+

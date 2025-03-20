@@ -1,0 +1,22 @@
+@keyframes dot-blink {
+  0% {
+    content: '';
+  }
+  20% {
+    content: '.';
+  }
+  40% {
+    content: '..';
+  }
+  60% {
+    content: '...';
+  }
+  100% {
+    content: '';
+  }
+}
+
+.dot-animation::after {
+  content: '';
+  animation: dot-blink 1s infinite; 
+}
