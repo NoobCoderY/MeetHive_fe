@@ -1,4 +1,4 @@
-# Just Agile
+# Meet hive
 
 # React + TypeScript + Vite
 
