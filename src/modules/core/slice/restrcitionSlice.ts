@@ -1,7 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 
-const TRANSLIMIT_IN_MINUTES = import.meta.env.VITE_TRANSLIMIT_IN_MINUTES;
+const TRANSLIMIT_IN_MINUTES =
+  Number(import.meta.env.VITE_TRANSLIMIT_IN_MINUTES) || 120;
 
 const initialState = {
   transcriptionRestrictionTime: 0,

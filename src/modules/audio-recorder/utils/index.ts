@@ -1,5 +1,7 @@
-const TRANSLIMIT_IN_MINUTES = import.meta.env.VITE_TRANSLIMIT_IN_MINUTES; // Total transcription limit in minutes
-const SECONDS_IN_MINUTE = import.meta.env.VITE_SECONDS_IN_MINUTE;
+const TRANSLIMIT_IN_MINUTES =
+  Number(import.meta.env.VITE_TRANSLIMIT_IN_MINUTES) || 120;
+const SECONDS_IN_MINUTE =
+  Number(import.meta.env.VITE_SECONDS_IN_MINUTE) || 60;
 
 const TRANSLIMIT_IN_SECONDS = TRANSLIMIT_IN_MINUTES * SECONDS_IN_MINUTE;
 
