@@ -1,64 +1,85 @@
-import { Card } from '@/shadcn/components/ui/card';
-import { ChevronsDown, ChevronsUp } from 'lucide-react';
+import { Card, CardContent, CardHeader, CardTitle } from '@/shadcn/components/ui/card';
+import { ChevronsDown, ChevronsUp, Sparkles } from 'lucide-react';
 import { useState } from 'react';
 import { SummaryItem } from '@/modules/summary/model';
 import LatestSummaryCard from '../../latest-summary-card';
 import { useTranslations } from 'use-intl';
+import { Button } from '@/shadcn/components/ui/button';
 
 interface MLatestSummaryListProps {
   latestSummary: SummaryItem[] | null;
 }
 
 const MLatestSummary = ({ latestSummary }: MLatestSummaryListProps) => {
-  const [toggleTodoAccordian, setToggleTodoAccordian] = useState<boolean>(true);
+  const [open, setOpen] = useState<boolean>(true);
   const t = useTranslations();
-  
-  // Toggle Accordion Handler
-  const handleToggle = () => setToggleTodoAccordian((prevState) => !prevState);
+  const isEmpty = !latestSummary?.length;
+
   return (
-    <div className='mt-6 p-2'>
-      {toggleTodoAccordian ? (
+    <div className='mt-2 px-1 pb-6'>
+      {open ? (
         <Card
-          className='flex justify-between p-2'
-          onClick={handleToggle}
+          className='glass-panel cursor-pointer border-primary/20'
+          onClick={() => setOpen(false)}
         >
-          <h1 className='text-md'>{t('dashboard.summary_card_title')}</h1>
-          <span>
-            <ChevronsDown
-              color='#89d289'
-              size={28}
-            />
-          </span>
+          <div className='flex items-center justify-between p-4'>
+            <div>
+              <p className='text-xs font-semibold uppercase tracking-wider text-primary'>Today</p>
+              <CardTitle className='text-base font-semibold'>{t('dashboard.summary_card_title')}</CardTitle>
+            </div>
+            <Button
+              variant='ghost'
+              size='icon'
+              className='rounded-xl text-primary'
+              aria-expanded={false}
+            >
+              <ChevronsDown className='h-6 w-6' />
+            </Button>
+          </div>
         </Card>
       ) : (
-        <div className='relative'>
-          <div className='absolute left-2 text-md'>
-            {t('dashboard.summary_card_title')}
-          </div>
-          <div
-            className='  absolute right-[4px] top-1 z-10 w-[21.3%] flex justify-center items-center'
-            onClick={handleToggle}
-          >
-            <div className='card_close_button_outer w-[100%] h-[100%] '>
-              <div className='card_close_button_inner w-[100%] h-[100%]  flex justify-center items-center py-[0.13rem] pl-[3px] '>
-                <ChevronsUp
-                  size={27}
-                  color='#97ec97'
-                />
-              </div>
+        <div className='space-y-3'>
+          <div className='flex items-center justify-between gap-2'>
+            <div>
+              <p className='text-xs font-semibold uppercase tracking-wider text-primary'>Today</p>
+              <h2 className='text-lg font-bold tracking-tight text-foreground'>{t('dashboard.summary_card_title')}</h2>
             </div>
+            <Button
+              variant='outline'
+              size='icon'
+              className='shrink-0 rounded-xl border-primary/30'
+              onClick={() => setOpen(true)}
+              aria-label='Collapse section'
+            >
+              <ChevronsUp className='h-5 w-5 text-primary' />
+            </Button>
           </div>
-          <div className='todos_summary_outer_card w-[100%] h-[100%]'>
-            <div className='todos_summary_inner_card w-[100%] h-[100%]'>
-              <div className='  px-3 pt-14 pb-10 h-[25rem]'>
-                <div className='overflow-y-scroll h-72 flex flex-col gap-3 no-scrollbar'>
+
+          <Card className='glass-panel border-primary/15'>
+            <CardHeader className='pb-2'>
+              <p className='text-sm text-muted-foreground'>Tap a card to open the full summary.</p>
+            </CardHeader>
+            <CardContent className='space-y-4 pt-0'>
+              {isEmpty ? (
+                <div className='flex flex-col items-center rounded-2xl border border-dashed border-primary/25 bg-primary/[0.04] px-4 py-12 text-center'>
+                  <div className='mb-3 flex h-12 w-12 items-center justify-center rounded-xl border border-primary/30 bg-primary/10'>
+                    <Sparkles className='h-6 w-6 text-primary' />
+                  </div>
+                  <p className='font-semibold text-foreground'>No summaries yet</p>
+                  <p className='mt-1 text-sm text-muted-foreground'>New items appear here as they finish processing.</p>
+                </div>
+              ) : (
+                <div className='flex max-h-[70vh] flex-col gap-4 overflow-y-auto no-scrollbar pb-2'>
                   {latestSummary?.map((summary) => (
-                    <LatestSummaryCard summary={summary} />
+                    <LatestSummaryCard
+                      key={summary.id}
+                      summary={summary}
+                    />
                   ))}
                 </div>
-              </div>
-            </div>
-          </div>
+              )}
+            </CardContent>
+          </Card>
         </div>
       )}
     </div>

@@ -1,5 +1,5 @@
 import React, { ChangeEvent, useEffect, useState } from 'react';
-import { FolderOpenDot } from 'lucide-react';
+import { FolderKanban } from 'lucide-react';
 import { Button } from '@/shadcn/components/ui/button';
 import {
   Dialog,
@@ -20,36 +20,8 @@ import { useLocation } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { selectProject } from '../../slice/ProjectSlice';
 import { useCreateProjectMutation } from '../../services/projectApi';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/shadcn/components/ui/card';
 
-interface ProjectForm {
-  setSelectCompanyForm: React.Dispatch<React.SetStateAction<number>>;
-  setCompanyRegistrationFormFieldsState: React.Dispatch<
-    React.SetStateAction<
-      {
-        profession: {
-          value: string;
-          marked: boolean;
-        }[];
-        interests: {
-          value: string;
-          marked: boolean;
-        }[];
-      }[]
-    >
-  >;
-  companyRegistrationFormFieldsState: {
-    profession: {
-      value: string;
-      marked: boolean;
-    }[];
-    interests: {
-      value: string;
-      marked: boolean;
-    }[];
-  }[];
-}
-
-// Define your paths
 const pathOne = '/project';
 
 export function CreateProjectDialog({
@@ -105,7 +77,7 @@ export function CreateProjectDialog({
         title: 'Success',
         description: t('project.project_create_success'),
       });
-      handleDialogClose();
+      setCreateProjectDialogOpen(false);
       setFormState({
         projectName: '',
         description: '',
@@ -126,57 +98,72 @@ export function CreateProjectDialog({
     }
   }, [isError, isSuccess]);
 
-  const handleDialogClose = () => {
-    setCreateProjectDialogOpen((prev) => !prev);
-  };
-
   return (
     <Dialog
       open={createProjectDialogOpen}
-      onOpenChange={handleDialogClose}
+      onOpenChange={setCreateProjectDialogOpen}
     >
-      <DialogContent className='sm:max-w-[425px]'>
-        <DialogHeader className='flex items-center justify-center'>
-          <DialogTitle className='text-2xl relative'>
-            {t('project.project_create')}
-            <div className='absolute bottom-[-0.25rem] left-0 w-full h-[1px] bg-[#fff]'></div>
-          </DialogTitle>
-          <DialogDescription></DialogDescription>
+      <DialogContent className='glass-panel max-h-[min(90vh,720px)] overflow-y-auto border-primary/25 shadow-glow-md sm:max-w-[480px]'>
+        <DialogHeader className='space-y-2 text-left'>
+          <div className='flex items-center gap-2'>
+            <span className='rounded-lg border border-primary/25 bg-primary/10 p-2'>
+              <FolderKanban className='h-5 w-5 text-primary' />
+            </span>
+            <div>
+              <DialogTitle className='text-xl font-bold tracking-tight md:text-2xl'>
+                {t('project.project_create')}
+              </DialogTitle>
+              <DialogDescription className='text-sm text-muted-foreground'>
+                Name your project and add a short description. You can change this later.
+              </DialogDescription>
+            </div>
+          </div>
         </DialogHeader>
-        <div className='grid gap-4 py-4'>
+        <div className='grid gap-5 py-2'>
           <div className='flex flex-col gap-2'>
             <Label
               htmlFor='projectName'
-              className='ml-2 text-md'
+              className='text-sm font-medium text-foreground'
             >
               {t('project.project_name')}
             </Label>
             <Input
               id='projectName'
-              className='col-span-3'
+              className='h-11 rounded-xl border-border/80 bg-background/60'
               value={formState.projectName}
               onChange={handleInputChange}
+              placeholder={t('project.project_name')}
             />
           </div>
           <div className='flex flex-col gap-2'>
             <Label
               htmlFor='description'
-              className='ml-2 text-md'
+              className='text-sm font-medium text-foreground'
             >
               {t('project.project_description')}
             </Label>
             <Textarea
-              placeholder='Type your Project Description here.'
+              placeholder='Describe what this project is for…'
               id='description'
               rows={5}
               value={formState.description}
               onChange={handleInputChange}
+              className='min-h-[120px] rounded-xl border-border/80 bg-background/60'
             />
           </div>
         </div>
-        <DialogFooter>
+        <DialogFooter className='gap-2 sm:justify-end'>
+          <Button
+            type='button'
+            variant='outline'
+            className='rounded-xl border-border/70'
+            onClick={() => setCreateProjectDialogOpen(false)}
+          >
+            Cancel
+          </Button>
           <Button
             type='submit'
+            className='rounded-xl shadow-glow-sm'
             onClick={submitForm}
           >
             {isLoading && <ReloadIcon className='mr-2 h-4 w-4 animate-spin' />}
@@ -192,23 +179,37 @@ const ProjectForm = () => {
   const [createProjectDialogOpen, setCreateProjectDialogOpen] = useState(false);
   const t = useTranslations();
   return (
-    <div className='flex justify-center items-center h-[80vh] flex-col'>
-      <p className='text-2xl font-bold mb-5'>
-        {t('project.default_project_create_title')}
-      </p>
-      <div className='px-2 py-3 pb-4 border-[1px] border-[#fff] flex justify-center items-center sm:w-[30vw] lg:w-[20vw] w-[60vw] flex-col gap-5 rounded-lg'>
-        <p className='text-xl font-bold'>
-          {t('project.default_project_create_btn')}
-        </p>
-        <div
-          className='rounded-[50%] border-[1px] border-[#fff] p-4 cursor-pointer'
-          onClick={() => setCreateProjectDialogOpen((prev) => !prev)}
-        >
-          <span>
-            <FolderOpenDot size={30} />
-          </span>
-        </div>
-      </div>
+    <div className='flex min-h-[calc(100dvh-8rem)] flex-col items-center justify-center px-4 py-12'>
+      <Card className='glass-panel w-full max-w-md border-primary/20 shadow-glow-sm'>
+        <CardHeader className='space-y-2 text-center'>
+          <div className='mx-auto flex h-14 w-14 items-center justify-center rounded-2xl border border-primary/30 bg-primary/10 shadow-inner-glow'>
+            <FolderKanban className='h-7 w-7 text-primary' />
+          </div>
+          <CardTitle className='text-balance text-2xl font-bold tracking-tight'>
+            {t('project.default_project_create_title')}
+          </CardTitle>
+          <CardDescription className='text-base'>
+            {t('project.default_project_create_btn')}
+          </CardDescription>
+        </CardHeader>
+        <CardContent className='flex justify-center pb-8'>
+          <button
+            type='button'
+            onClick={() => setCreateProjectDialogOpen(true)}
+            className='group flex flex-col items-center gap-3 rounded-2xl border border-dashed border-primary/35 bg-primary/[0.06] px-10 py-8 transition-all duration-300 hover:border-primary/55 hover:bg-primary/10 hover:shadow-glow-sm'
+          >
+            <span className='rounded-full border border-primary/40 bg-background/80 p-5 transition-transform duration-300 group-hover:scale-105'>
+              <FolderKanban
+                className='h-10 w-10 text-primary'
+                strokeWidth={1.5}
+              />
+            </span>
+            <span className='text-sm font-semibold text-primary'>
+              Open project form
+            </span>
+          </button>
+        </CardContent>
+      </Card>
       <CreateProjectDialog
         createProjectDialogOpen={createProjectDialogOpen}
         setCreateProjectDialogOpen={setCreateProjectDialogOpen}

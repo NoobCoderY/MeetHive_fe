@@ -17,6 +17,13 @@ import { z } from 'zod';
 import { useNavigate } from 'react-router-dom';
 import { useForgetPasswordVerifyMutation } from '../../services/authApi';
 import { toast } from '@/shadcn/components/ui/use-toast';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '@/shadcn/components/ui/card';
 
 interface IUpdatePasswordForm {
   email: string;
@@ -56,38 +63,41 @@ const UpdatePasswordEmailForm = () => {
   };
   const goToSignupPage = () => navigate(`/signup`);
   return (
-    <div className='w-full'>
-      <div>
-        <h1 className='text-4xl mb-2 font-light'>
+    <Card className='glass-panel border-primary/20 shadow-glow-sm'>
+      <CardHeader className='space-y-1 pb-2'>
+        <CardTitle className='text-2xl font-bold tracking-tight md:text-3xl'>
           {t('signup.update_password_title')}
-        </h1>
-      </div>
-
-      <Form {...form}>
-        <form
-          onSubmit={form.handleSubmit(onSubmit)}
-          className='space-y-2'
-        >
-          <FormField
-            control={form.control}
-            name='email'
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>{t('signup.email_label')}</FormLabel>
-                <FormControl>
-                  <Input
-                    placeholder={t('signup.email_label')}
-                    {...field}
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <div className='!mt-[1.5rem]'>
+        </CardTitle>
+        <CardDescription>
+          We&apos;ll email you a link to update your password.
+        </CardDescription>
+      </CardHeader>
+      <CardContent className='space-y-6 pt-2'>
+        <Form {...form}>
+          <form
+            onSubmit={form.handleSubmit(onSubmit)}
+            className='space-y-4'
+          >
+            <FormField
+              control={form.control}
+              name='email'
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel className='text-foreground/90'>{t('signup.email_label')}</FormLabel>
+                  <FormControl>
+                    <Input
+                      placeholder={t('signup.email_label')}
+                      className='h-11 rounded-xl border-border/80 bg-background/50'
+                      {...field}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
             <JAButton
               type='submit'
-              variant='outline'
+              variant='default'
               className='!w-full'
               disabled={isLoading}
             >
@@ -96,19 +106,20 @@ const UpdatePasswordEmailForm = () => {
               )}
               {t('forgot_password.send_reset_mail')}
             </JAButton>
-          </div>
-        </form>
-      </Form>
-      <p>
-        {t('login.no_account')} &nbsp;
-        <Button
-          variant='link'
-          onClick={goToSignupPage}
-        >
-          {t('login.signup_label')}
-        </Button>
-      </p>
-    </div>
+          </form>
+        </Form>
+        <p className='text-center text-sm text-muted-foreground'>
+          {t('login.no_account')}{' '}
+          <Button
+            variant='link'
+            className='h-auto p-0 font-semibold text-primary'
+            onClick={goToSignupPage}
+          >
+            {t('login.signup_label')}
+          </Button>
+        </p>
+      </CardContent>
+    </Card>
   );
 };
 

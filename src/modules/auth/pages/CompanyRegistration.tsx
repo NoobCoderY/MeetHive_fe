@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import BgImg from '../../../assets/background.svg';
 import SwitchCompanyForm from '../components/registration-form/switchCompanyForm';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
@@ -62,18 +61,10 @@ const CompanyRegistrationPage = () => {
   }
 
   return (
-    <div
-      style={{
-        backgroundImage: `url(${BgImg})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-      }}
-      className='h-[100vh]'
-    >
+    <div className='min-h-[calc(100dvh-4rem)] app-mesh-bg'>
       {isLoading ? (
-        <div className='flex justify-center items-center h-[60vh]'>
-          <LoadingSpinner
-          />
+        <div className='flex min-h-[50vh] items-center justify-center'>
+          <LoadingSpinner />
         </div>
       ) : (
         <SwitchCompanyForm

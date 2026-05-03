@@ -17,6 +17,14 @@ module.exports = {
   		}
   	},
   	extend: {
+  		fontFamily: {
+  			sans: ['"Plus Jakarta Sans"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+  		},
+  		boxShadow: {
+  			'glow-sm': '0 0 24px -6px hsl(187 100% 50% / 0.35)',
+  			'glow-md': '0 0 40px -8px hsl(187 100% 50% / 0.45)',
+  			'inner-glow': 'inset 0 1px 0 0 hsl(0 0% 100% / 0.06)',
+  		},
   		colors: {
 				customGray: 'var(--skelton-loader)',
   			border: 'hsl(var(--border))',
@@ -60,55 +68,38 @@ module.exports = {
   		},
   		keyframes: {
   			'accordion-down': {
-  				from: {
-  					height: '0'
-  				},
-  				to: {
-  					height: 'var(--radix-accordion-content-height)'
-  				}
+  				from: { height: '0' },
+  				to: { height: 'var(--radix-accordion-content-height)' },
   			},
   			'accordion-up': {
-  				from: {
-  					height: 'var(--radix-accordion-content-height)'
-  				},
-  				to: {
-  					height: '0'
-  				}
+  				from: { height: 'var(--radix-accordion-content-height)' },
+  				to: { height: '0' },
   			},
   			text: {
   				'0%, 100%': {
   					'background-size': '200% 200%',
-  					'background-position': 'left center'
+  					'background-position': 'left center',
   				},
   				'50%': {
   					'background-size': '200% 200%',
-  					'background-position': 'right center'
-  				}
-  			},
-  			'accordion-down': {
-  				from: {
-  					height: '0'
+  					'background-position': 'right center',
   				},
-  				to: {
-  					height: 'var(--radix-accordion-content-height)'
-  				}
   			},
-  			'accordion-up': {
-  				from: {
-  					height: 'var(--radix-accordion-content-height)'
-  				},
-  				to: {
-  					height: '0'
-  				}
-  			}
+  			'fade-up': {
+  				from: { opacity: '0', transform: 'translateY(10px)' },
+  				to: { opacity: '1', transform: 'translateY(0)' },
+  			},
+  			shimmer: {
+  				'100%': { transform: 'translateX(100%)' },
+  			},
   		},
   		animation: {
   			'accordion-down': 'accordion-down 0.2s ease-out',
   			'accordion-up': 'accordion-up 0.2s ease-out',
   			text: 'text 5s ease infinite',
-  			'accordion-down': 'accordion-down 0.2s ease-out',
-  			'accordion-up': 'accordion-up 0.2s ease-out'
-  		}
+  			'fade-up': 'fade-up 0.5s ease-out forwards',
+  			shimmer: 'shimmer 1.2s ease-in-out infinite',
+  		},
   	}
   },
   plugins: [require("tailwindcss-animate")],

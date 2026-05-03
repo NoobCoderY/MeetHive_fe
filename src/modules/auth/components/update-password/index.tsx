@@ -17,6 +17,13 @@ import { ReloadIcon } from '@radix-ui/react-icons';
 import { useNavigate } from 'react-router-dom';
 import { useUpdatePasswordMutation } from '../../services/authApi';
 import { useParams } from 'react-router-dom';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '@/shadcn/components/ui/card';
 /**
  * Asynchronously handles form submission.
  *
@@ -69,56 +76,58 @@ const UpdatePasswordForm = () => {
   const goToSignupPage = () => navigate(`/signup`);
 
   return (
-    <div className='w-full'>
-      <div>
-        <h1 className='text-4xl mb-2 font-light'>
+    <Card className='glass-panel border-primary/20 shadow-glow-sm'>
+      <CardHeader className='space-y-1 pb-2'>
+        <CardTitle className='text-2xl font-bold tracking-tight md:text-3xl'>
           {t('forgot_password.update_password')}
-        </h1>
-      </div>
-
-      <Form {...form}>
-        <form
-          onSubmit={form.handleSubmit(onSubmit)}
-          className='space-y-2'
-        >
-          <FormField
-            control={form.control}
-            name='newPassword'
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>{t('signup.password_label')}</FormLabel>
-                <FormControl>
-                  <Input
-                    type='password'
-                    placeholder={t('signup.password_label')}
-                    {...field}
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name='confirmPassword'
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>{t('signup.confirm_password')}</FormLabel>
-                <FormControl>
-                  <Input
-                    type='password'
-                    placeholder={t('signup.confirm_password')}
-                    {...field}
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <div className='!mt-[1.5rem]'>
+        </CardTitle>
+        <CardDescription>Choose a new password for your account.</CardDescription>
+      </CardHeader>
+      <CardContent className='space-y-6 pt-2'>
+        <Form {...form}>
+          <form
+            onSubmit={form.handleSubmit(onSubmit)}
+            className='space-y-4'
+          >
+            <FormField
+              control={form.control}
+              name='newPassword'
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel className='text-foreground/90'>{t('signup.password_label')}</FormLabel>
+                  <FormControl>
+                    <Input
+                      type='password'
+                      placeholder={t('signup.password_label')}
+                      className='h-11 rounded-xl border-border/80 bg-background/50'
+                      {...field}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name='confirmPassword'
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel className='text-foreground/90'>{t('signup.confirm_password')}</FormLabel>
+                  <FormControl>
+                    <Input
+                      type='password'
+                      placeholder={t('signup.confirm_password')}
+                      className='h-11 rounded-xl border-border/80 bg-background/50'
+                      {...field}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
             <JAButton
               type='submit'
-              variant='outline'
+              variant='default'
               className='!w-full'
               disabled={isLoading}
             >
@@ -127,19 +136,20 @@ const UpdatePasswordForm = () => {
               )}
               {t('forgot_password.update_password')}
             </JAButton>
-          </div>
-        </form>
-      </Form>
-      <p>
-        {t('login.no_account')} &nbsp;
-        <Button
-          variant='link'
-          onClick={goToSignupPage}
-        >
-          {t('login.signup_label')}
-        </Button>
-      </p>
-    </div>
+          </form>
+        </Form>
+        <p className='text-center text-sm text-muted-foreground'>
+          {t('login.no_account')}{' '}
+          <Button
+            variant='link'
+            className='h-auto p-0 font-semibold text-primary'
+            onClick={goToSignupPage}
+          >
+            {t('login.signup_label')}
+          </Button>
+        </p>
+      </CardContent>
+    </Card>
   );
 };
 

@@ -18,6 +18,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useRegisterUserMutation } from '../../services/authApi';
 import { useToast } from '@/shadcn/components/ui/use-toast';
 import { ReloadIcon } from '@radix-ui/react-icons';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/shadcn/components/ui/card';
 
 const SignupForm = () => {
   const navigate = useNavigate();
@@ -50,12 +51,7 @@ const SignupForm = () => {
       accept_terms: undefined,
     },
   });
-  /**
-   * Handles the form submission.
-   *
-   * @param {z.infer<typeof signupFormSchema>} values - The values of the form.
-   * @return {Promise<void>} A promise that resolves when the submission is complete.
-   */
+
   const onSubmit = async (values: z.infer<typeof signupFormSchema>) => {
     try {
       await registerUser({
@@ -79,96 +75,100 @@ const SignupForm = () => {
   };
 
   const goToLoginPage = () => navigate(`/login`);
+
   return (
-    <div className='w-full'>
-      <div>
-        <h1 className='text-4xl mb-2 font-light'>{t('signup.title')}</h1>
-        <h3 className='text-xl mb-4 font-extralight'>{t('signup.subtitle')}</h3>
-      </div>
+    <Card className='glass-panel border-primary/20 shadow-glow-sm'>
+      <CardHeader className='space-y-1 pb-2'>
+        <CardTitle className='text-2xl font-bold tracking-tight md:text-3xl'>{t('signup.title')}</CardTitle>
+        <CardDescription className='text-base'>{t('signup.subtitle')}</CardDescription>
+      </CardHeader>
+      <CardContent className='space-y-6 pt-2'>
+        <Form {...form}>
+          <form
+            onSubmit={form.handleSubmit(onSubmit)}
+            className='space-y-4'
+          >
+            <div className='grid gap-4 sm:grid-cols-2'>
+              <FormField
+                control={form.control}
+                name='first_name'
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className='text-foreground/90'>{t('signup.first_name_label')}</FormLabel>
+                    <FormControl>
+                      <Input
+                        placeholder={t('signup.first_name_label')}
+                        {...field}
+                        className='h-11 rounded-xl border-border/80 bg-background/50 focus-visible:ring-primary'
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name='last_name'
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className='text-foreground/90'>{t('signup.last_name_label')}</FormLabel>
+                    <FormControl>
+                      <Input
+                        placeholder={t('signup.last_name_label')}
+                        {...field}
+                        className='h-11 rounded-xl border-border/80 bg-background/50 focus-visible:ring-primary'
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+            </div>
+            <FormField
+              control={form.control}
+              name='email'
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel className='text-foreground/90'>{t('signup.email_label')}</FormLabel>
+                  <FormControl>
+                    <Input
+                      placeholder={t('signup.email_label')}
+                      {...field}
+                      className='h-11 rounded-xl border-border/80 bg-background/50 focus-visible:ring-primary'
+                      autoComplete='email'
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name='password'
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel className='text-foreground/90'>{t('signup.password_label')}</FormLabel>
+                  <FormControl>
+                    <Input
+                      type='password'
+                      placeholder={t('signup.password_label')}
+                      {...field}
+                      className='h-11 rounded-xl border-border/80 bg-background/50 focus-visible:ring-primary'
+                      autoComplete='new-password'
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
 
-      <Form {...form}>
-        <form
-          onSubmit={form.handleSubmit(onSubmit)}
-          className=''
-        >
-          <FormField
-            control={form.control}
-            name='first_name'
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>{t('signup.first_name_label')}</FormLabel>
-                <FormControl>
-                  <Input
-                    placeholder={t('signup.first_name_label')}
-                    {...field}
-                    className='!bg-none'
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name='last_name'
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>{t('signup.last_name_label')}</FormLabel>
-                <FormControl>
-                  <Input
-                    placeholder={t('signup.last_name_label')}
-                    {...field}
-                    className='!bg-none'
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name='email'
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>{t('signup.email_label')}</FormLabel>
-                <FormControl>
-                  <Input
-                    placeholder={t('signup.email_label')}
-                    {...field}
-                    className='!bg-none'
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name='password'
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>{t('signup.password_label')}</FormLabel>
-                <FormControl>
-                  <Input
-                    type='password'
-                    placeholder={t('signup.password_label')}
-                    {...field}
-                    className='!bg=none'
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-
-          <div className='pt-2'>
             <FormField
               control={form.control}
               name='accept_terms'
               render={({ field }) => (
                 <FormItem>
                   <FormControl>
-                    <div className='flex items-center space-x-2'>
+                    <div className='flex items-start gap-3 rounded-xl border border-border/60 bg-background/30 p-3'>
                       <Checkbox
                         id='terms'
                         name='accept_terms'
@@ -177,13 +177,17 @@ const SignupForm = () => {
                           field.onChange(checked);
                           return checked;
                         }}
+                        className='mt-0.5 border-primary/50 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground'
                       />
                       <label
                         htmlFor='terms'
-                        className='text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70'
+                        className='text-sm leading-snug text-muted-foreground peer-disabled:cursor-not-allowed peer-disabled:opacity-70'
                       >
                         {t('signup.accept')}{' '}
-                        <Link to='/agb'>
+                        <Link
+                          to='/agb'
+                          className='font-medium text-primary underline-offset-4 hover:underline'
+                        >
                           {t('signup.terms_and_conditions')}
                         </Link>
                       </label>
@@ -193,33 +197,31 @@ const SignupForm = () => {
                 </FormItem>
               )}
             />
-          </div>
 
-          <div className='!mt-[1.5rem]'>
             <JAButton
               type='submit'
-              variant='outline'
+              variant='default'
               className='!w-full'
               disabled={isLoading}
             >
-              {isLoading && (
-                <ReloadIcon className='mr-2 h-4 w-4 animate-spin' />
-              )}
+              {isLoading && <ReloadIcon className='mr-2 h-4 w-4 animate-spin' />}
               {t('signup.join_now')}
             </JAButton>
-          </div>
-        </form>
-      </Form>
-      <p>
-        {t('signup.already_account')} &nbsp;&nbsp;{' '}
-        <Button
-          variant='link'
-          onClick={goToLoginPage}
-        >
-          {t('signup.login')}
-        </Button>
-      </p>
-    </div>
+          </form>
+        </Form>
+
+        <p className='text-center text-sm text-muted-foreground'>
+          {t('signup.already_account')}{' '}
+          <Button
+            variant='link'
+            className='h-auto p-0 font-semibold text-primary'
+            onClick={goToLoginPage}
+          >
+            {t('signup.login')}
+          </Button>
+        </p>
+      </CardContent>
+    </Card>
   );
 };
 

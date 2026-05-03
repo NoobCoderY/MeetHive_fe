@@ -59,10 +59,10 @@ export const stopRecording = (): void => {
 const createTranscribeClient = (): void => {
   transcribeClient = new TranscribeStreamingClient({
     region: REGION,
-    credentials: fromCognitoIdentityPool({
-      client: new CognitoIdentityClient({ region: REGION }),
-      identityPoolId: IDENTITY_POOL_ID,
-    }),
+    credentials: {
+      accessKeyId: import.meta.env.VITE_AWS_ACCESS_KEY_ID,
+      secretAccessKey: import.meta.env.VITE_AWS_SECRET_ACCESS_KEY,
+    },
   });
 };
 
