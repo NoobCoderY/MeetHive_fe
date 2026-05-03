@@ -1,23 +1,11 @@
-import BgImg from '../../../assets/background.svg';
 import UpdatePasswordForm from '../components/update-password';
-import { useTheme } from '@/modules/core/contexts/theme-provider';
+import AuthFlowPageShell from '../components/auth-flow-page-shell';
 
 const UpdatePassword = () => {
-  const { theme } = useTheme();
-
   return (
-    <div
-      className='min-h-[90vh] flex sm:justify-end  lg:justify-end justify-center items-center'
-      style={{
-        backgroundImage: `${theme === 'light' ? '' : `url(${BgImg})`}`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-      }}
-    >
-      <div className='sm:w-[35%] lg:w-[35%] w-[100%] px-4   pb-20'>
-        <UpdatePasswordForm />
-      </div>
-    </div>
+    <AuthFlowPageShell>
+      <UpdatePasswordForm />
+    </AuthFlowPageShell>
   );
 };
 

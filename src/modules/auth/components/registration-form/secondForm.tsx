@@ -1,14 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { Button } from '@/shadcn/components/ui/button';
-import { ChevronLeft, Plus } from 'lucide-react';
-import { companyRegistrationFormFields } from '../../utils';
+import { Check, ChevronLeft, Layers } from 'lucide-react';
 import { useToast } from '@/shadcn/components/ui/use-toast';
 import { useTranslations } from 'use-intl';
 import { useSaveOnboardingMutation } from '../../services/authApi';
 import { RootState } from '@/store/store';
 import { useSelector } from 'react-redux';
-import { JaCheckbox } from '@/shadcn/atoms/ja-checkbox';
 import { useNavigate } from 'react-router-dom';
+import { Card, CardContent, CardDescription, CardFooter, CardHeader } from '@/shadcn/components/ui/card';
+import { cn } from '@/shadcn/lib/utils';
 
 interface ISecondForm {
   setSelectCompanyForm: React.Dispatch<React.SetStateAction<number>>;
@@ -45,8 +45,6 @@ const SecondForm = ({
 }: ISecondForm) => {
   const { toast } = useToast();
   const t = useTranslations();
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [showAddProjectButton, setShowAddProjectButton] = useState(false);
   const [saveOnboarding, { isSuccess, isError, error }] =
     useSaveOnboardingMutation();
   const user = useSelector((state: RootState) => state.auth.user);
@@ -73,32 +71,20 @@ const SecondForm = ({
       });
       navigate('/project/create');
     }
-      if (isError) {
-        
-        
-        const errorMessage = error as {
-          error: string, data: {
-            error: string;
-        } };
-       
+    if (isError) {
+      const errorMessage = error as {
+        error: string;
+        data: { error: string };
+      };
 
-        toast({
-          title: 'Error',
-          description: errorMessage.error || error.data.error,
-          variant: 'destructive',
-        });
-      
+      toast({
+        title: 'Error',
+        description: errorMessage?.error || errorMessage?.data?.error || 'Something went wrong',
+        variant: 'destructive',
+      });
     }
-  }, [isSuccess, error, isError]);
+  }, [isSuccess, error, isError, navigate, t, toast]);
 
-  
-
-  /**
-   * Handles the change event of a checkbox. Toggles the 'marked' property of the interest object at the specified index.
-   *
-   * @param {number} index - The index of the interest object in the interests array.
-   * @return {void} This function does not return anything.
-   */
   const handleCheckboxChange = (index: number) => {
     const currentMarkState =
       companyRegistrationFormFieldsState[0].interests[index].marked;
@@ -108,7 +94,7 @@ const SecondForm = ({
 
     if (!currentMarkState && markedCount >= 3) {
       toast({
-        title: 'You can select up to three professions',
+        title: 'You can select up to three interests',
         variant: 'destructive',
       });
       return;
@@ -122,66 +108,77 @@ const SecondForm = ({
   };
 
   return (
-    <div className='flex justify-center items-center h-[80vh] px-4'>
-      <div>
-        <h1 className='sm:text-lg lg:text-xl text-2xl  font-bold text-center'>
-          What interests you most?
-        </h1>
-        <div className='flex  sm:gap-5 lg:gap-5 gap-4 mt-4 flex-wrap justify-center items-center px-3'>
-          {companyRegistrationFormFields[0].interests.map((item, index) => {
-            return (
-              <div
-                key={`${item} + ${index}`}
-                className='rounded-[20px] flex gap-3 border-[1px] border-[#fff] items-center justify-center sm:px-4 sm:py-2 lg:px-4 lg:py-2 px-3 py-2'
-              >
-                <JaCheckbox
-                  className='!border-[#fff] sm:!h-6 sm:!w-6 lg:!w-6 lg:!h-6 !w-4 !h-4'
-                  checked={item.marked}
+    <div className='flex min-h-[calc(100dvh-6rem)] items-center justify-center px-4 py-10'>
+      <Card className='glass-panel w-full max-w-3xl border-primary/20 shadow-glow-sm'>
+        <CardHeader className='space-y-3 text-center'>
+          <div className='mx-auto flex items-center justify-center gap-2'>
+            <span className='rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-primary'>
+              Step 2 / 2
+            </span>
+            <Layers className='h-4 w-4 text-primary' />
+          </div>
+          <CardDescription className='text-xs font-medium uppercase tracking-wide text-primary'>
+            Interests
+          </CardDescription>
+          <h1 className='text-balance text-2xl font-bold tracking-tight text-foreground md:text-3xl'>
+            What interests you most?
+          </h1>
+          <p className='text-sm text-muted-foreground'>
+            Pick up to three focus areas — we use this to tailor your workspace.
+          </p>
+        </CardHeader>
+        <CardContent>
+          <div className='flex flex-wrap justify-center gap-3'>
+            {companyRegistrationFormFieldsState[0].interests.map(
+              (item, index) => (
+                <button
+                  key={`int-${index}-${item.value}`}
+                  type='button'
                   onClick={() => handleCheckboxChange(index)}
-                />
-                <p className='sm:text-[14px] lg:text-[16px] text-[12px] font-semibold '>
-                  {item.value}
-                </p>
-              </div>
-            );
-          })}
-        </div>
-        <div className='flex item-center  sm:gap-[7rem] lg:gap-[10rem] gap-[5rem] mt-10 justify-center'>
+                  className={cn(
+                    'flex max-w-[min(100%,320px)] items-start gap-3 rounded-2xl border px-4 py-3 text-left transition-all duration-200',
+                    item.marked
+                      ? 'border-primary/60 bg-primary/15 shadow-glow-sm ring-1 ring-primary/30'
+                      : 'border-border/80 bg-background/40 hover:border-primary/40 hover:bg-primary/5'
+                  )}
+                >
+                  <span
+                    className={cn(
+                      'mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border-2 transition-colors',
+                      item.marked
+                        ? 'border-primary bg-primary text-primary-foreground'
+                        : 'border-muted-foreground/35 bg-background/50'
+                    )}
+                  >
+                    {item.marked && <Check className='h-4 w-4' strokeWidth={3} />}
+                  </span>
+                  <span className='text-sm font-semibold leading-snug text-foreground'>
+                    {item.value}
+                  </span>
+                </button>
+              )
+            )}
+          </div>
+        </CardContent>
+        <CardFooter className='flex flex-col gap-3 border-t border-border/40 pt-6 sm:flex-row sm:justify-between'>
           <Button
-            variant={'outline'}
-            className='text-md p-3 sm:w-[20%] lg:w-[8%] w-[30%]'
+            variant='outline'
+            className='w-full rounded-xl border-border/70 sm:w-auto'
             disabled={isSuccess}
-            onClick={() => {
-              setSelectCompanyForm(1);
-            }}
+            onClick={() => setSelectCompanyForm(1)}
           >
-            <ChevronLeft />
+            <ChevronLeft className='mr-2 h-4 w-4' />
             Prev
           </Button>
-          {showAddProjectButton ? (
-            <div
-              className='flex justify-center items-center'
-              onClick={() => {
-                setSelectCompanyForm(3);
-              }}
-            >
-              <Button className='text-sm '>
-                <Plus className='mr-2' />
-                Add Project
-              </Button>
-            </div>
-          ) : (
-            <Button
-              type='submit'
-              onClick={() => {
-                submitForm();
-              }}
-            >
-              Submit
-            </Button>
-          )}
-        </div>
-      </div>
+          <Button
+            className='w-full rounded-xl shadow-glow-sm sm:w-auto'
+            disabled={isSuccess}
+            onClick={submitForm}
+          >
+            Submit
+          </Button>
+        </CardFooter>
+      </Card>
     </div>
   );
 };

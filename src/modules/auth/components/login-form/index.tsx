@@ -19,6 +19,7 @@ import { setUser } from '../../auth-slice';
 import { useDispatch } from 'react-redux';
 import { useLoginUserMutation } from '../../services/authApi';
 import { useToast } from '@/shadcn/components/ui/use-toast';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/shadcn/components/ui/card';
 
 const LoginForm = () => {
   const t = useTranslations();
@@ -44,24 +45,36 @@ const LoginForm = () => {
       password: '',
     },
   });
-  /**
-   * Handle the form submission asynchronously.
-   *
-   * @param {z.infer<typeof loginFormSchema>} values - The values submitted in the form.
-   * @return {Promise<void>} A promise that resolves when the form submission is complete.
-   */
+
   const onSubmit = async (values: z.infer<typeof loginFormSchema>) => {
     try {
-      const {data: userData} = await loginUser({
+      const { data: userData } = await loginUser({
         email: values.email,
         password: values.password,
       }).unwrap();
-      const { id, username, email, first_name, last_name, profile_picture, access_token, refresh_token, } = userData;
+      const {
+        id,
+        username,
+        email,
+        first_name,
+        last_name,
+        profile_picture,
+        access_token,
+        refresh_token,
+      } = userData;
 
       if (userData) {
         dispatch(
           setUser({
-            user: {id,username,email,first_name,last_name,group: [],profile_picture: profile_picture || null},
+            user: {
+              id,
+              username,
+              email,
+              first_name,
+              last_name,
+              group: [],
+              profile_picture: profile_picture || null,
+            },
             token: { accessToken: access_token, refreshToken: refresh_token },
           })
         );
@@ -86,88 +99,89 @@ const LoginForm = () => {
   }
 
   return (
-    <div className='w-full'>
-      <div>
-        <h1 className='text-4xl mb-2 font-light'>{t('login.title')}</h1>
-        <h3 className='text-xl mb-4 font-extralight'>{t('login.subtitle')}</h3>
-      </div>
+    <Card className='glass-panel border-primary/20 shadow-glow-sm'>
+      <CardHeader className='space-y-1 pb-2'>
+        <CardTitle className='text-2xl font-bold tracking-tight md:text-3xl'>{t('login.title')}</CardTitle>
+        <CardDescription className='text-base'>{t('login.subtitle')}</CardDescription>
+      </CardHeader>
+      <CardContent className='space-y-6 pt-2'>
+        <Form {...form}>
+          <form
+            onSubmit={form.handleSubmit(onSubmit)}
+            className='space-y-4'
+          >
+            <FormField
+              control={form.control}
+              name='email'
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel className='text-foreground/90'>{t('signup.email_label')}</FormLabel>
+                  <FormControl>
+                    <Input
+                      placeholder={t('signup.email_label')}
+                      {...field}
+                      className='h-11 rounded-xl border-border/80 bg-background/50 transition-colors focus-visible:ring-primary'
+                      autoComplete='email'
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name='password'
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel className='text-foreground/90'>{t('signup.password_label')}</FormLabel>
+                  <FormControl>
+                    <Input
+                      type='password'
+                      placeholder={t('signup.password_label')}
+                      {...field}
+                      className='h-11 rounded-xl border-border/80 bg-background/50 transition-colors focus-visible:ring-primary'
+                      autoComplete='current-password'
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <div className='flex justify-end'>
+              <Button
+                type='button'
+                variant='link'
+                className='h-auto px-0 text-sm font-medium text-primary'
+                onClick={goToForgotPage}
+              >
+                {t('login.forgot_password')}
+              </Button>
+            </div>
 
-      <Form {...form}>
-        <form
-          onSubmit={form.handleSubmit(onSubmit)}
-          className='space-y-2'
-        >
-          <FormField
-            control={form.control}
-            name='email'
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>{t('signup.email_label')}</FormLabel>
-                <FormControl>
-                  <Input
-                    placeholder={t('signup.email_label')}
-                    {...field}
-                    className='!bg-none'
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name='password'
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>{t('signup.password_label')}</FormLabel>
-                <FormControl>
-                  <Input
-                    type='password'
-                    placeholder={t('signup.password_label')}
-                    {...field}
-                    className='!bg-none'
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <div className='my-2 text-end'>
-            <Button
-              variant='link'
-              onClick={() => {
-                goToForgotPage;
-              }}
-            >
-              {t('login.forgot_password')}
-            </Button>
-          </div>
-
-          <div className='!mt-[1.5rem]'>
             <JAButton
               type='submit'
-              variant='outline'
+              variant='default'
               className='!w-full'
               disabled={isLoading}
             >
-              {isLoading && (
-                <ReloadIcon className='mr-2 h-4 w-4 animate-spin' />
-              )}
+              {isLoading && <ReloadIcon className='mr-2 h-4 w-4 animate-spin' />}
               {t('login.title')}
             </JAButton>
-          </div>
-        </form>
-      </Form>
-      <p>
-        {t('login.no_account')} &nbsp;
-        <Button
-          variant='link'
-          onClick={goToSignupPage}
-        >
-          {t('login.signup_label')}
-        </Button>
-      </p>
-    </div>
+          </form>
+        </Form>
+
+        <p className='text-center text-sm text-muted-foreground'>
+          {t('login.no_account')}{' '}
+          <Button
+            variant='link'
+            className='h-auto p-0 font-semibold text-primary'
+            onClick={goToSignupPage}
+          >
+            {t('login.signup_label')}
+          </Button>
+        </p>
+      </CardContent>
+    </Card>
   );
 };
 

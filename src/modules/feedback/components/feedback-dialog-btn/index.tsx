@@ -1,48 +1,51 @@
-import JAButton from '@/shadcn/atoms/ja-button';
+import { Button } from '@/shadcn/components/ui/button';
 import { ThumbsDown, ThumbsUp } from 'lucide-react';
 import { useTranslations } from 'use-intl';
 import useResponsive from '@/hooks/useResponsive';
 import { MessageSquareMore } from 'lucide-react';
-
-
 
 interface IFeedBackBtnProps {
   setFeedbackDialogOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const FeedbackDialogBtn = ({ setFeedbackDialogOpen }: IFeedBackBtnProps) => {
-    const t = useTranslations();
-    const breakPoints  = useResponsive([600, 900, 1400]);
+  const t = useTranslations();
+  const breakPoints = useResponsive([600, 900, 1400]);
+
   const openfeedBackDialog = () => {
-    setFeedbackDialogOpen((open) => !open);
+    setFeedbackDialogOpen(true);
   };
 
-    return (
-      <>
-        {breakPoints == 0 ? (
-          <span
-            onClick={openfeedBackDialog}
-          >
-            <MessageSquareMore/>
+  return (
+    <>
+      {breakPoints === 0 ? (
+        <Button
+          type='button'
+          variant='ghost'
+          size='icon'
+          className='rounded-xl'
+          onClick={openfeedBackDialog}
+          aria-label={t('feedback.feedback_btn')}
+        >
+          <MessageSquareMore className='h-5 w-5' />
+        </Button>
+      ) : (
+        <Button
+          type='button'
+          variant='outline'
+          size='sm'
+          className='gap-2 rounded-xl border-border/70'
+          onClick={openfeedBackDialog}
+        >
+          <span className='flex items-center gap-1'>
+            <ThumbsUp className='h-3.5 w-3.5' />
+            <ThumbsDown className='h-3.5 w-3.5' />
           </span>
-        ) : (
-          <JAButton
-            variant={'outline'}
-            className='flex justify-center gap-1 text-[#89d289] w-[14vw]'
-            onClick={openfeedBackDialog}
-          >
-            <span className='flex'>
-              <ThumbsUp size={12} />
-              <ThumbsDown
-                size={12}
-                className='mt-2'
-              />
-            </span>
-            {t('feedback.feedback_btn')}
-          </JAButton>
-        )}
-      </>
-    );
+          {t('feedback.feedback_btn')}
+        </Button>
+      )}
+    </>
+  );
 };
 
 export default FeedbackDialogBtn;

@@ -52,7 +52,7 @@ const Header = () => {
   return (
     <>
       {breakPoints === 0 ? (
-        <div className='flex justify-between items-center gap-2 px-2 py-2 mb-4 relative'>
+        <div className='relative mb-4 flex items-center justify-between gap-2 border-b border-border/40 bg-background/60 px-3 py-3 backdrop-blur-md'>
           <div className='w-[30px] h-[30px]'>
             <img
               src={Logo}
@@ -60,7 +60,7 @@ const Header = () => {
               className='w-[100%] h-[100%]'
             />
           </div>
-          <h1 className='animate-text bg-gradient-to-r from-white via-green-500 to-green-900 bg-clip-text text-transparent text-[1rem] font-black'>
+          <h1 className='max-w-[55vw] truncate text-[1rem] font-bold tracking-tight text-gradient-brand'>
             {selectedProject?.name.length > 10
               ? `${selectedProject?.name.substring(0, 10)}..`
               : selectedProject?.name}
@@ -104,8 +104,8 @@ const Header = () => {
           </div>
         </div>
       ) : (
-        <div className='flex justify-between  items-center gap-2 mb-4 p-3'>
-          <h1 className='animate-text bg-gradient-to-r from-white via-green-500 to-green-900 bg-clip-text text-transparent text-[1.5rem] font-black'>
+        <div className='mb-4 flex items-center justify-between gap-3 border-b border-border/40 bg-background/60 p-4 backdrop-blur-md'>
+          <h1 className='min-w-0 max-w-[50%] truncate text-xl font-bold tracking-tight text-gradient-brand md:max-w-none md:text-2xl'>
             {selectedProject?.name.length > 20
               ? `${selectedProject?.name.substring(0, 20)}...`
               : selectedProject?.name}

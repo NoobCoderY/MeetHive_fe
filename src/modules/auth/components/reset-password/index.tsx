@@ -15,6 +15,13 @@ import JAButton from '@/shadcn/atoms/ja-button';
 import { ReloadIcon } from '@radix-ui/react-icons';
 import { useUpdatePasswordMutation } from '../../services/authApi';
 import { useNavigate, useParams } from 'react-router-dom';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '@/shadcn/components/ui/card';
 
 const ResetPassword = () => {
   const t = useTranslations();
@@ -60,56 +67,58 @@ const ResetPassword = () => {
       });
   };
   return (
-    <div className='w-full'>
-      <div>
-        <h1 className='text-4xl mb-2 font-light'>
+    <Card className='glass-panel border-primary/20 shadow-glow-sm'>
+      <CardHeader className='space-y-1 pb-2'>
+        <CardTitle className='text-2xl font-bold tracking-tight md:text-3xl'>
           {t('forgot_password.update_password')}
-        </h1>
-      </div>
-
-      <Form {...form}>
-        <form
-          onSubmit={form.handleSubmit(onSubmit)}
-          className='space-y-2'
-        >
-          <FormField
-            control={form.control}
-            name='password'
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>{t('signup.password_label')}</FormLabel>
-                <FormControl>
-                  <Input
-                    type='password'
-                    placeholder={t('signup.password_label')}
-                    {...field}
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name='confirmPassword'
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>{t('signup.confirm_password')}</FormLabel>
-                <FormControl>
-                  <Input
-                    type='password'
-                    placeholder={t('signup.confirm_password')}
-                    {...field}
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <div className='!mt-[1.5rem]'>
+        </CardTitle>
+        <CardDescription>Set a new password to secure your account.</CardDescription>
+      </CardHeader>
+      <CardContent className='pt-2'>
+        <Form {...form}>
+          <form
+            onSubmit={form.handleSubmit(onSubmit)}
+            className='space-y-4'
+          >
+            <FormField
+              control={form.control}
+              name='password'
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel className='text-foreground/90'>{t('signup.password_label')}</FormLabel>
+                  <FormControl>
+                    <Input
+                      type='password'
+                      placeholder={t('signup.password_label')}
+                      className='h-11 rounded-xl border-border/80 bg-background/50'
+                      {...field}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name='confirmPassword'
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel className='text-foreground/90'>{t('signup.confirm_password')}</FormLabel>
+                  <FormControl>
+                    <Input
+                      type='password'
+                      placeholder={t('signup.confirm_password')}
+                      className='h-11 rounded-xl border-border/80 bg-background/50'
+                      {...field}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
             <JAButton
               type='submit'
-              variant='outline'
+              variant='default'
               className='!w-full'
               disabled={isLoading}
             >
@@ -118,10 +127,10 @@ const ResetPassword = () => {
               )}
               {t('forgot_password.update_password')}
             </JAButton>
-          </div>
-        </form>
-      </Form>
-    </div>
+          </form>
+        </Form>
+      </CardContent>
+    </Card>
   );
 };
 

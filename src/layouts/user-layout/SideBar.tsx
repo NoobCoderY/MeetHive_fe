@@ -1,105 +1,200 @@
 import { Button } from '@/shadcn/components/ui/button';
 import {
-  HelpCircleIcon,
-  HomeIcon,
+  HelpCircle,
+  Home,
   LayoutDashboard,
+  PanelLeftClose,
+  PanelLeft,
   Presentation,
+  type LucideIcon,
 } from 'lucide-react';
 import Logo from '../../assets/logo.svg';
-import { useLocation } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import UploadRecording from '@/modules/upload-recording/pages/uploadRecording';
-import { ArrowRightFromLine } from 'lucide-react';
 import { useState } from 'react';
+import { cn } from '@/shadcn/lib/utils';
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from '@/shadcn/components/ui/tooltip';
+import { Separator } from '@/shadcn/components/ui/separator';
+
+type NavLinkItem = {
+  type: 'link';
+  icon: LucideIcon;
+  label: string;
+  href: string;
+  selected: boolean;
+};
+
+type NavUploadItem = { type: 'upload' };
+
+type NavEntry = NavLinkItem | NavUploadItem;
+
 const SideBar = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  const [menuExpand, setMenuExpand] = useState(false);
+  const [expanded, setExpanded] = useState(true);
 
-  const sidenavList = [
+  const entries: NavEntry[] = [
     {
-      icon: <HomeIcon size={15} />,
-      selected: location.pathname.startsWith(`/dashboard`),
+      type: 'link',
+      icon: Home,
+      selected:
+        location.pathname.startsWith(`/dashboard`) ||
+        location.pathname === '/' ||
+        location.pathname === '',
       href: '/dashboard',
       label: 'Dashboard',
     },
     {
-      icon: <LayoutDashboard size={15} />,
+      type: 'link',
+      icon: LayoutDashboard,
       selected: location.pathname.startsWith('/transcription'),
       href: '/transcription',
       label: 'Transcription',
     },
     {
-      icon: <Presentation size={15} />,
+      type: 'link',
+      icon: Presentation,
       selected: location.pathname.startsWith('/summary'),
       href: '/summary/list',
       label: 'Summary',
     },
-    // {
-    //   icon: <Shield />,
-    // },
+    { type: 'upload' },
     {
-      icon: <UploadRecording  isSidebar={menuExpand}/>,
-    },
-    {
-      icon: <HelpCircleIcon size={15} />,
+      type: 'link',
+      icon: HelpCircle,
       href: '/support',
       selected: location.pathname.startsWith('/support'),
       label: 'Support',
     },
   ];
 
-  const goToPage = (nav: any, index: any) => {
-    if (index === 3) {
-      return;
-    }
-    navigate(nav.href);
-  };
   const goToHomePage = () => {
     navigate('/dashboard');
   };
 
-  return (
-    <div
-      className={`border-2 h-[100vh] p-2 flex flex-col transition-all duration-300 ${
-        menuExpand ? 'w-[200px]' : 'w-[70px] items-center'
-      }`}
-    >
-      <div
-        className={`cursor-pointer ${menuExpand ? 'w-[50px] pl-3 ' : 'w-[20px]'}`}
-        onClick={goToHomePage}
+  const LinkRow = ({
+    icon: Icon,
+    label,
+    href,
+    selected,
+  }: Omit<NavLinkItem, 'type'>) => {
+    const button = (
+      <Button
+        variant='ghost'
+        className={cn(
+          'group relative h-11 w-full justify-start gap-3 rounded-xl px-3 font-medium transition-all duration-200',
+          selected
+            ? 'bg-primary/15 text-primary shadow-glow-sm'
+            : 'text-muted-foreground hover:bg-accent hover:text-foreground'
+        )}
+        onClick={() => navigate(href)}
       >
-        <img
-          src={Logo}
-          alt='logo'
-          className='w-[100%] h-[100%]'
+        <Icon
+          className={cn(
+            'h-[18px] w-[18px] shrink-0 transition-transform duration-200 group-hover:scale-105',
+            selected && 'text-primary'
+          )}
         />
-      </div>
-      <div className={`mt-5 cursor-pointer ${menuExpand ? 'p-2 ' : 'p-0'}`}>
-        <Button
-          variant={menuExpand ? 'secondary' : 'ghost'}
-          onClick={() => setMenuExpand(!menuExpand)}
-        >
-          <ArrowRightFromLine size={15} />
-        </Button>
-      </div>
-      <div className='flex flex-col justify-center  h-[80vh]'>
-        {sidenavList.map((nav, ind) => (
-          <div
-            className='p-2  overflow-hidden'
-            key={`nav-${ind}`}
-            onClick={() => goToPage(nav, ind)}
+        {expanded && <span className='truncate text-sm'>{label}</span>}
+        {selected && (
+          <span className='absolute left-0 top-1/2 h-6 w-1 -translate-y-1/2 rounded-r-full bg-primary shadow-glow-sm' />
+        )}
+      </Button>
+    );
+
+    if (!expanded) {
+      return (
+        <Tooltip>
+          <TooltipTrigger asChild>{button}</TooltipTrigger>
+          <TooltipContent
+            side='right'
+            className='font-medium'
           >
-            <Button
-              className='gap-2 text-sm '
-              variant={nav.selected ? 'secondary' : 'ghost'}
-            >
-              {nav.icon} {menuExpand && nav?.label}
-            </Button>
-          </div>
-        ))}
-      </div>
-    </div>
+            {label}
+          </TooltipContent>
+        </Tooltip>
+      );
+    }
+
+    return button;
+  };
+
+  return (
+    <TooltipProvider delayDuration={0}>
+      <aside
+        className={cn(
+          'sticky top-0 z-40 flex h-screen shrink-0 flex-col border-r border-border/60 bg-card/75 py-4 backdrop-blur-xl transition-[width] duration-300',
+          expanded ? 'w-56 px-3' : 'w-[72px] items-center px-2'
+        )}
+      >
+        <div
+          className={cn(
+            'mb-4 flex items-center',
+            expanded ? 'justify-between gap-2 px-1' : 'flex-col gap-3'
+          )}
+        >
+          <button
+            type='button'
+            onClick={goToHomePage}
+            className={cn(
+              'flex cursor-pointer items-center gap-2 rounded-xl p-1.5 transition-opacity hover:opacity-90',
+              !expanded && 'justify-center'
+            )}
+          >
+            <div className='flex h-9 w-9 items-center justify-center rounded-xl border border-primary/25 bg-primary/10 shadow-inner-glow'>
+              <img
+                src={Logo}
+                alt='MeetHive'
+                className='h-6 w-6 object-contain'
+              />
+            </div>
+            {expanded && (
+              <span className='text-sm font-semibold tracking-tight text-foreground'>MeetHive</span>
+            )}
+          </button>
+          <Button
+            variant='outline'
+            size='icon'
+            className='h-9 w-9 shrink-0 rounded-xl border-border/60 bg-background/50'
+            onClick={() => setExpanded(!expanded)}
+            aria-label={expanded ? 'Collapse sidebar' : 'Expand sidebar'}
+          >
+            {expanded ? <PanelLeftClose className='h-4 w-4' /> : <PanelLeft className='h-4 w-4' />}
+          </Button>
+        </div>
+
+        <Separator className='mb-3 bg-border/60' />
+
+        <nav className='flex flex-1 flex-col gap-1 overflow-y-auto no-scrollbar'>
+          {entries.map((entry, ind) => {
+            if (entry.type === 'upload') {
+              return (
+                <div
+                  key={`upload-${ind}`}
+                  className={cn('flex w-full justify-center px-1', expanded && 'justify-start')}
+                >
+                  <UploadRecording isSidebar={expanded} />
+                </div>
+              );
+            }
+            return (
+              <LinkRow
+                key={entry.href}
+                icon={entry.icon}
+                label={entry.label}
+                href={entry.href}
+                selected={entry.selected}
+              />
+            );
+          })}
+        </nav>
+      </aside>
+    </TooltipProvider>
   );
 };
 

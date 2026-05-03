@@ -1,5 +1,4 @@
 import ProjectForm from '../components/project-form';
-import BgImg from '../../../assets/background.svg';
 import { useDispatch, useSelector } from 'react-redux';
 import { useGetAllCompanyQuery } from '../services/companyApi';
 import { useEffect } from 'react';
@@ -36,17 +35,8 @@ const CreateProject = () => {
   }, [selectedCompany]);
 
   return (
-    <div
-      className=''
-      style={{
-        backgroundImage: `url(${BgImg})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-      }}
-    >
-      <div className='h-[100vh]'>
-        <ProjectForm />
-      </div>
+    <div className='min-h-[calc(100dvh-4rem)] app-mesh-bg'>
+      <ProjectForm />
     </div>
   );
 };

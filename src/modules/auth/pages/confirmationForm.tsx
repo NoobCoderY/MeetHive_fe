@@ -1,23 +1,12 @@
-import Background from '../../../assets/background.svg'
-import ConfirmationTempalte from '../components/confirmation-template'
-import { useTheme } from '@/modules/core/contexts/theme-provider';
+import ConfirmationTempalte from '../components/confirmation-template';
+import AuthFlowPageShell from '../components/auth-flow-page-shell';
 
 const ConfirmationForm = () => {
-  const { theme } = useTheme();
   return (
-    <div
-      className='grid  min-h-[90vh] '
-      style={{
-        backgroundImage: `${theme === 'light' ? '' : `url(${Background})`}`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-      }}
-    >
-      <div className=''>
-        <ConfirmationTempalte />
-      </div>
-    </div>
+    <AuthFlowPageShell wide>
+      <ConfirmationTempalte />
+    </AuthFlowPageShell>
   );
-}
+};
 
-export default ConfirmationForm
+export default ConfirmationForm;
