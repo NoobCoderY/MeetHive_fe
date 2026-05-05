@@ -1,4 +1,3 @@
-import { Button } from '@/shadcn/components/ui/button';
 import { Speech } from 'lucide-react';
 import { useDeleteTranscriptionMutation } from '../../sevices/transcription';
 import { useTranslations } from 'use-intl';
@@ -193,18 +192,16 @@ const TranscriptionDetail = () => {
               {t('transcription.generate_summary')}
             </JAButton>
 
-            <div className='ja-2-btn-container'>
-              <Button
-                className='ja-2-button text-[#fff] w-[17vw]'
-                onClick={() => setConfirmDeleteDailog((prev) => !prev)}
-              >
-                {' '}
-                {isLoading && (
-                  <ReloadIcon className='mr-2 h-4 w-4 animate-spin' />
-                )}
-                {t('transcription.delete')}
-              </Button>
-            </div>
+            <JAButton
+              variant='destructive'
+              className='w-[17vw]'
+              onClick={() => setConfirmDeleteDailog((prev) => !prev)}
+            >
+              {isLoading && (
+                <ReloadIcon className='mr-2 h-4 w-4 animate-spin' />
+              )}
+              {t('transcription.delete')}
+            </JAButton>
           </div>
         </div>
       </div>

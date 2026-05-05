@@ -11,7 +11,6 @@ import {
   AvatarImage,
 } from '@/shadcn/components/ui/avatar';
 import { ModeToggle } from '@/modules/core/components/mode-switch';
-import { LanguageToggle } from '@/modules/core/components/language-switch';
 import { useTranslations } from 'use-intl';
 import AudioRecorder from '@/modules/audio-recorder/pages/AudioRecorder';
 import { useNavigate } from 'react-router-dom';
@@ -69,8 +68,6 @@ const Header = () => {
             &nbsp;
             <ModeToggle />
             &nbsp;
-            <LanguageToggle />
-            &nbsp;
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Avatar className='cursor-pointer'>
@@ -123,8 +120,6 @@ const Header = () => {
                 <GlobalSearchPage />
               &nbsp;
             <ModeToggle />
-            &nbsp;
-            <LanguageToggle />
             &nbsp;
             <DropdownMenu>
               <DropdownMenuTrigger asChild>

@@ -1,4 +1,3 @@
-import { Button } from '@/shadcn/components/ui/button';
 import { Card } from '@/shadcn/components/ui/card';
 import { ReloadIcon } from '@radix-ui/react-icons';
 import { ChevronsDown, ChevronsUp, Speech } from 'lucide-react';
@@ -228,17 +227,16 @@ const MTranscriptionDetail = () => {
               )}
               {t('transcription.generate_summary')}
             </JAButton>
-            <div className='ja-2-btn-container'>
-              <Button
-                className='ja-2-button text-[#fff] w-[58vw]'
-                onClick={() => setConfirmDeleteDailog((prev) => !prev)}
-              >
-                {isLoading && (
-                  <ReloadIcon className='mr-2 h-4 w-4 animate-spin' />
-                )}
-                {t('transcription.delete')}
-              </Button>
-            </div>
+            <JAButton
+              variant='destructive'
+              className='w-[58vw]'
+              onClick={() => setConfirmDeleteDailog((prev) => !prev)}
+            >
+              {isLoading && (
+                <ReloadIcon className='mr-2 h-4 w-4 animate-spin' />
+              )}
+              {t('transcription.delete')}
+            </JAButton>
           </div>
         </>
       )}

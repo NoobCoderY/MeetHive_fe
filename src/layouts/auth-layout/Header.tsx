@@ -1,5 +1,4 @@
 import { ModeToggle } from '@/modules/core/components/mode-switch';
-import { LanguageToggle } from '@/modules/core/components/language-switch';
 import Logo from '../../assets/logo.svg';
 import { Link } from 'react-router-dom';
 
@@ -24,7 +23,6 @@ const Header = () => {
         </Link>
         <div className='flex items-center gap-2'>
           <ModeToggle />
-          <LanguageToggle />
         </div>
       </div>
     </header>

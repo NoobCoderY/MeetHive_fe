@@ -89,7 +89,7 @@ const startStreaming = async (
     AudioStream: getAudioStream(),
     EnablePartialResultsStabilization: true,
     ShowSpeakerLabel: true,
-    LanguageCode: 'de-DE',
+    LanguageCode: "en-US",
   });
 
   //here we got error of again and again calling
