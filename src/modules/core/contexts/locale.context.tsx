@@ -4,7 +4,6 @@ import {
   createContext,
   useContext,
   useEffect,
-  useState,
 } from "react";
 import { IChildrenProp } from "../models/code.models";
 import { IntlProvider } from "use-intl";
@@ -20,24 +19,24 @@ export interface ILocale {
   setLocale: any;
 }
 
-const lang = localStorage.getItem("locale") || "en";
+const APP_LOCALE = "en" as const;
 
 const LocaleContext = createContext<ILocale>({
-  locale: lang,
+  locale: APP_LOCALE,
   setLocale: () => null,
 });
 export const useLocale = () => useContext(LocaleContext);
 
 const LocaleProvider = ({ children }: IChildrenProp) => {
-  const [locale, setLocale] = useState<string>(lang);
-
   useEffect(() => {
-    localStorage.setItem("locale", locale);
-  }, [locale]);
+    localStorage.setItem("locale", APP_LOCALE);
+  }, []);
 
   return (
-    <LocaleContext.Provider value={{ locale, setLocale }}>
-      <IntlProvider locale={locale} messages={messages[locale]}>
+    <LocaleContext.Provider
+      value={{ locale: APP_LOCALE, setLocale: () => {} }}
+    >
+      <IntlProvider locale={APP_LOCALE} messages={messages[APP_LOCALE]}>
         {children}
       </IntlProvider>
     </LocaleContext.Provider>
